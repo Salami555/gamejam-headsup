@@ -35,9 +35,7 @@ public class ShockWaveRenderer : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            float radius = 4.0f;
-            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            MakeWave(pos);
+            MakeWave(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
     }
 

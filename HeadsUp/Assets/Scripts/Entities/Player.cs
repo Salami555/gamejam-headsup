@@ -9,17 +9,21 @@ namespace Entities
     {
         public float MovementSpeed;
         public float JumpHeight;
+
+        public float AerialSpeedFactor;
+        public float AerialAcceleration;
         public float RotateTimeout;
         
         private InputController input;
 
         private CircleCollider2D _circ_col;
-        private int health = 5;
+        public int health = 3;
         private float hit_knockback = 10;
         private float hit_threshhold = 18;//im Bereich bis ca 14 würde man beim gegen die Wand springen schaden nehmen.
 
         private bool jump;
         private float _rotateTimeout = 0;
+        private bool _grounded = false;
         
         protected override void Start()
         {
@@ -45,7 +49,17 @@ namespace Entities
                 _rigidbody.AddForce(LocalGravity.normalized * -jumpForce, ForceMode2D.Impulse);
                 jump = false;
             }
-            _rigidbody.AddForce(delta, ForceMode2D.Impulse);
+
+            if (_grounded)
+            {
+                _rigidbody.AddForce(delta, ForceMode2D.Impulse);   
+            }
+            else if (HorizontalMovement.magnitude < MovementSpeed * AerialSpeedFactor) //TODO: fails when exceeded in the opposit direction
+            {
+                _rigidbody.AddForce(targetHorizontal * AerialAcceleration, ForceMode2D.Impulse);
+            }
+
+            _grounded = false;
 
         }
 
@@ -75,13 +89,13 @@ namespace Entities
             base.OnCollisionEnter2D(other);
             if (other.otherCollider == _circ_col)
             {
-                if ((other.relativeVelocity.magnitude) > hit_threshhold || other.gameObject.CompareTag("Player"));
+                if (other.relativeVelocity.magnitude > hit_threshhold || other.gameObject.CompareTag("Player"))
                 {
                     Vector2 head_pos = (Vector2)transform.position + _circ_col.offset;
                     Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(head_pos, 0.6f);
                     ExplosionForce(head_pos, 10, 100);
                     health--;
-                    Debug.LogError(health);
+                    Debug.Log(health);
                     _rigidbody.AddForce(-transform.up.normalized * hit_knockback, ForceMode2D.Impulse);//Knockback nach "unten", nicht sicher, ob das so gut ist. Eine Explosion-Force wäre vielleicht passender.
                     if (health <= 0)
                     {
@@ -90,6 +104,7 @@ namespace Entities
                 }
             }
         }
+
 
 
 
@@ -112,6 +127,12 @@ namespace Entities
                     }
                 }
             }
+        }
+
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            _grounded = true;
+
         }
     }
 }

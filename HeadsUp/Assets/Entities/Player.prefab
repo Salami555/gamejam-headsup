@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac87581b9828448f4845a8291b52d12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LocalGravity: {x: 0, y: 1}
+  LocalGravity: {x: 0, y: -9.8}
 --- !u!212 &212867219089877570
 SpriteRenderer:
   m_ObjectHideFlags: 1

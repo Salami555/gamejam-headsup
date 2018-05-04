@@ -7,6 +7,7 @@ namespace Entities
 	{
 
 		public Vector2 LocalGravity;
+        public GameObject ground_hit_effect;
 
         private CircleCollider2D _circ_col;
 		private Rigidbody2D _rigidbody;
@@ -79,6 +80,7 @@ namespace Entities
 			//TODO ground touch particles
 			Vector2 touchPosition = transform.position - new Vector3(0, 1, 0);
 			Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(touchPosition, 0.3f);
+            GameObject this_effect = Instantiate(ground_hit_effect, touchPosition, ground_hit_effect.transform.rotation);
 		}
 	}
 }

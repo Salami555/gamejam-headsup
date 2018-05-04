@@ -63,6 +63,8 @@ namespace Entities
 		private void OnGroundTouch()
 		{
 			//TODO ground touch particles
+			Vector2 touchPosition = transform.position - new Vector3(0, 1, 0);
+			Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(touchPosition, 0.3f);
 		}
 	}
 }

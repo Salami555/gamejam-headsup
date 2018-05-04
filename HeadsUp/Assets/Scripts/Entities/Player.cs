@@ -9,7 +9,7 @@ namespace Entities
         private CircleCollider2D _circ_col;
         private int health = 5;
         private float hit_knockback = 10;
-        private float hit_threshhold = 18;//im Bereich bis ca 14 würde man beim gegen die Wand springen schaden nehmen. Spieler, die aus mehr als 2 Blöcken Höhe auf einen fallen, erzeugen einen größeren Geschwindigkeitsunterschied.
+        private float hit_threshhold = 18;//im Bereich bis ca 14 würde man beim gegen die Wand springen schaden nehmen.
 
         private bool jump;
         
@@ -59,7 +59,7 @@ namespace Entities
             base.OnCollisionEnter2D(other);
             if (other.otherCollider == _circ_col)
             {
-                if ((other.relativeVelocity.magnitude) > hit_threshhold)
+                if ((other.relativeVelocity.magnitude) > hit_threshhold || other.gameObject.CompareTag("Player"));
                 {
                     Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(new Vector2(transform.position.x, transform.position.y) + _circ_col.offset, 0.6f);
                     health--;

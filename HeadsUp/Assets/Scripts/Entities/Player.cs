@@ -15,7 +15,7 @@ namespace Entities
         private InputController input;
 
         private CircleCollider2D _circ_col;
-        private int health = 5;
+        private int health = 3;
         private float hit_knockback = 10;
         private float hit_threshhold = 18;//im Bereich bis ca 14 würde man beim gegen die Wand springen schaden nehmen.
 
@@ -91,7 +91,7 @@ namespace Entities
                 {
                     Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(new Vector2(transform.position.x, transform.position.y) + _circ_col.offset, 0.6f);
                     health--;
-                    Debug.LogError(health);
+                    Debug.Log(health);
                     _rigidbody.AddForce(-transform.up.normalized * hit_knockback, ForceMode2D.Impulse);//Knockback nach "unten", nicht sicher, ob das so gut ist. Eine Explosion-Force wäre vielleicht passender.
                     if (health <= 0)
                     {

@@ -16,6 +16,8 @@ public class InputController : MonoBehaviour
     private void Awake()
     {
         this.playerNumber = playerCounter++;
+        if (controllers == null)
+            controllers = new List<InputController>();
         controllers.Add(this);
     }
 

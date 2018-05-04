@@ -9,12 +9,14 @@ namespace Entities
 		public Vector2 LocalGravity;
 
 		private Rigidbody2D _rigidbody;
+        private InputController input;
 		
 	
 		// Use this for initialization
 		void Start ()
 		{
 			_rigidbody = GetComponent<Rigidbody2D>();
+            input = GetComponent<InputController>();
 		}
 	
 		// Update is called once per frame
@@ -27,12 +29,12 @@ namespace Entities
 			transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.down, LocalGravity));
 			_rigidbody.AddForce(LocalGravity, ForceMode2D.Force);
 			var movement = new Vector2(-LocalGravity.normalized.y, LocalGravity.normalized.x);
-			var targetForce = Input.GetAxis("Horizontal") * 5.0f;
+			var targetForce = input.Horizontal * 5.0f;
 			var currentHorizontal = new Vector2(_rigidbody.velocity.x * movement.x * movement.x, _rigidbody.velocity.y * movement.y * movement.y);
 			var targetHorizontal = movement * targetForce;
 			var delta = (targetHorizontal - currentHorizontal).normalized;
 
-			if (Input.GetKeyDown(KeyCode.W))
+			if (input.Jump)
 			{
 				_rigidbody.AddForce(LocalGravity * -30.0f, ForceMode2D.Force);
 			}

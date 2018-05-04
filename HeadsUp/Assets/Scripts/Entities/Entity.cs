@@ -31,6 +31,11 @@ namespace Entities
 			var currentHorizontal = new Vector2(_rigidbody.velocity.x * movement.x * movement.x, _rigidbody.velocity.y * movement.y * movement.y);
 			var targetHorizontal = movement * targetForce;
 			var delta = (targetHorizontal - currentHorizontal).normalized;
+
+			if (Input.GetKeyDown(KeyCode.W))
+			{
+				_rigidbody.AddForce(LocalGravity * -30.0f, ForceMode2D.Force);
+			}
 			//Debug.DrawLine(transform.position, transform.position + new Vector3((movement * delta).x, (movement * delta).y, 0), Color.green);
 			Debug.DrawLine(transform.position, transform.position + new Vector3(currentHorizontal.x, currentHorizontal.y, 0), Color.green);
 			Debug.DrawLine(transform.position, transform.position + new Vector3(targetHorizontal.x, targetHorizontal.y, 0), Color.red);

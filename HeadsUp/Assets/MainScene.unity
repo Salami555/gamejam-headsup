@@ -1051,15 +1051,6 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: -15, y: -5, z: 0}
-    second:
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
   - first: {x: -14, y: -5, z: 0}
     second:
       m_TileIndex: 0
@@ -1196,15 +1187,6 @@ Tilemap:
       m_TileFlags: 1
       m_ColliderType: 1
   - first: {x: -18, y: -4, z: 0}
-    second:
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: -15, y: -4, z: 0}
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -1483,7 +1465,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 14, y: 3, z: 0}
+  - first: {x: 13, y: 3, z: 0}
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -1564,7 +1546,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 14, y: 4, z: 0}
+  - first: {x: 13, y: 4, z: 0}
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -1591,7 +1573,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 13, y: 5, z: 0}
+  - first: {x: 12, y: 5, z: 0}
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -1600,7 +1582,7 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 14, y: 5, z: 0}
+  - first: {x: 13, y: 5, z: 0}
     second:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
@@ -1998,13 +1980,13 @@ Tilemap:
       m_ColliderType: 1
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 171
+  - m_RefCount: 169
     m_Data: {fileID: 11400000, guid: db804b946ca3b4ed19563cd75f1db511, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 171
+  - m_RefCount: 169
     m_Data: {fileID: 21300000, guid: f7f97687bb1dd7d4997aa42d481fad63, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 171
+  - m_RefCount: 169
     m_Data:
       e00: 1
       e01: 0
@@ -2023,7 +2005,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 171
+  - m_RefCount: 169
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2099,17 +2081,17 @@ CompositeCollider2D:
         Y: -80000000
       - X: -140000000
         Y: -90000000
-    - - X: 150000000
+    - - X: 140000000
         Y: 60000000
-      - X: 130000000
+      - X: 120000000
         Y: 60000000
+      - X: 120000000
+        Y: 50000000
       - X: 130000000
         Y: 50000000
-      - X: 140000000
-        Y: 50000000
-      - X: 140000000
+      - X: 130000000
         Y: 30000000
-      - X: 150000000
+      - X: 140000000
         Y: 30000000
     - - X: 40000000
         Y: 50000000
@@ -2149,9 +2131,9 @@ CompositeCollider2D:
         Y: -40000000
       - X: -130000000
         Y: -30000000
-      - X: -150000000
+      - X: -140000000
         Y: -30000000
-      - X: -150000000
+      - X: -140000000
         Y: -50000000
       - X: -60000000
         Y: -50000000
@@ -2181,12 +2163,12 @@ CompositeCollider2D:
       - {x: -2, y: -8}
       - {x: -14, y: -8}
       - {x: -14, y: -9}
-    - - {x: 15, y: 6}
-      - {x: 13, y: 6}
+    - - {x: 14, y: 6}
+      - {x: 12, y: 6}
+      - {x: 12, y: 5}
       - {x: 13, y: 5}
-      - {x: 14, y: 5}
+      - {x: 13, y: 3}
       - {x: 14, y: 3}
-      - {x: 15, y: 3}
     - - {x: 4, y: 5}
       - {x: -2, y: 5}
       - {x: -2, y: 4}
@@ -2206,8 +2188,8 @@ CompositeCollider2D:
     - - {x: -6, y: -4}
       - {x: -13, y: -4}
       - {x: -13, y: -3}
-      - {x: -15, y: -3}
-      - {x: -15, y: -5}
+      - {x: -14, y: -3}
+      - {x: -14, y: -5}
       - {x: -6, y: -5}
     - - {x: 4, y: -4}
       - {x: -1, y: -4}
@@ -2361,7 +2343,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4809096590452838, guid: 0b33c5778c83e4170a16fe5804f01b62, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4809096590452838, guid: 0b33c5778c83e4170a16fe5804f01b62, type: 2}
       propertyPath: m_LocalPosition.y

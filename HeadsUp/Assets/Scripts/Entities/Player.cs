@@ -7,6 +7,7 @@ namespace Entities
     {
         public float MovementSpeed;
         public float JumpHeight;
+        public float RotateTimeout;
         
         private InputController input;
 
@@ -16,6 +17,7 @@ namespace Entities
         private float hit_threshhold = 18;//im Bereich bis ca 14 würde man beim gegen die Wand springen schaden nehmen.
 
         private bool jump;
+        private float _rotateTimeout = 0;
         
         protected override void Start()
         {
@@ -47,14 +49,21 @@ namespace Entities
 
         private void Update()
         {
-            if (input.GravityTurnLeft)
+            _rotateTimeout -= Time.deltaTime;
+            if (_rotateTimeout < 0)
             {
-                LocalGravity = new Vector2(-LocalGravity.y, LocalGravity.x);
+                if (input.GravityTurnLeft)
+                {
+                    LocalGravity = new Vector2(-LocalGravity.y, LocalGravity.x);
+                    _rotateTimeout = RotateTimeout;
+                }
+                if (input.GravityTurnRight)
+                {
+                    LocalGravity = new Vector2(LocalGravity.y, -LocalGravity.x);
+                    _rotateTimeout = RotateTimeout;
+                }
             }
-            if (input.GravityTurnRight)
-            {
-                LocalGravity = new Vector2(LocalGravity.y, -LocalGravity.x);
-            }
+            
 
             jump |= input.Jump;
         }

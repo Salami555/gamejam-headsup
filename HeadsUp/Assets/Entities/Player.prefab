@@ -121,6 +121,7 @@ MonoBehaviour:
     type: 2}
   MovementSpeed: 7.5
   JumpHeight: 4
+  RotateTimeout: 0.5
 --- !u!114 &114904674840480672
 MonoBehaviour:
   m_ObjectHideFlags: 1

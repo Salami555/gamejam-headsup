@@ -54,12 +54,15 @@ namespace Entities
 		{
 			if (other.gameObject.CompareTag("Wall"))
 			{
-				var contactNormal = other.contacts[0].normal;
-				float angle = Vector2.Angle(contactNormal, LocalGravity * -1);
-				if (angle < 5)
-				{
-					OnGroundTouch();
-				}
+                if (other.contacts.Length > 0)
+                {
+                    var contactNormal = other.contacts[0].normal;
+                    float angle = Vector2.Angle(contactNormal, LocalGravity * -1);
+                    if (angle < 5)
+                    {
+                        OnGroundTouch();
+                    }
+                }
 			}
 		}
 

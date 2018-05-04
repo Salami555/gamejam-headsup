@@ -55,7 +55,7 @@ namespace Entities
 			if (other.gameObject.CompareTag("Wall"))
 			{
 				var contactNormal = other.contacts[0].normal;
-				float angle = Vector2.Angle(contactNormal, new Vector2(0, 1));
+				float angle = Vector2.Angle(contactNormal, LocalGravity * -1);
 				if (angle < 5)
 				{
 					OnGroundTouch();
@@ -66,9 +66,10 @@ namespace Entities
 		private void OnGroundTouch()
 		{
 			//TODO ground touch particles
-			Vector2 touchPosition = transform.position - new Vector3(0, 1, 0);
+			Vector3 offset = -LocalGravity.normalized;
+			Vector2 touchPosition = transform.position - offset;
 			Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(touchPosition, 0.3f);
-            Instantiate(ground_hit_effect, touchPosition, ground_hit_effect.transform.rotation);
+            Instantiate(ground_hit_effect, touchPosition, transform.rotation);
 		}
 	}
 }

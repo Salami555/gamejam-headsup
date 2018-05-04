@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 namespace Entities
 {
@@ -11,6 +13,29 @@ namespace Entities
 
         
 		protected Rigidbody2D _rigidbody;
+
+		protected Vector2 HorizontalVector
+		{
+			get { return new Vector2(-LocalGravity.normalized.y, LocalGravity.normalized.x); }
+		}
+		
+		protected Vector2 HorizontalMovement
+		{
+			get
+			{
+				var horizontal = HorizontalVector;
+				return new Vector2(horizontal.x * horizontal.x * _rigidbody.velocity.x, horizontal.y * horizontal.y * _rigidbody.velocity.y);
+			}
+		}
+		
+		protected Vector2 VerticalMovement
+		{
+			get
+			{
+				var gravity = LocalGravity.normalized;
+				return new Vector2(gravity.x * gravity.x * _rigidbody.velocity.x, gravity.y * gravity.y * _rigidbody.velocity.y);
+			}
+		}
         
 	
 		// Use this for initialization

@@ -22,11 +22,10 @@ namespace Entities
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
-            var movement = new Vector2(-LocalGravity.normalized.y, LocalGravity.normalized.x);
-            var targetForce = input.Horizontal * 5.0f;
-            var currentHorizontal = new Vector2(_rigidbody.velocity.x * movement.x * movement.x, _rigidbody.velocity.y * movement.y * movement.y);
-            var targetHorizontal = movement * targetForce;
-            var delta = (targetHorizontal - currentHorizontal).normalized;
+            var movement = HorizontalVector;
+            var targetVelocity = input.Horizontal * 5.0f;
+            var targetHorizontal = movement * targetVelocity;
+            var delta = targetHorizontal - HorizontalMovement;
 
             if (input.Jump)
             {
@@ -34,11 +33,7 @@ namespace Entities
                 _rigidbody.AddForce(-currentVertical, ForceMode2D.Impulse);
                 _rigidbody.AddForce(LocalGravity.normalized * -16.0f, ForceMode2D.Impulse);
             }
-            //Debug.DrawLine(transform.position, transform.position + new Vector3((movement * delta).x, (movement * delta).y, 0), Color.green);
-            Debug.DrawLine(transform.position, transform.position + new Vector3(currentHorizontal.x, currentHorizontal.y, 0), Color.green);
-            Debug.DrawLine(transform.position, transform.position + new Vector3(targetHorizontal.x, targetHorizontal.y, 0), Color.red);
-            Debug.DrawLine(transform.position, transform.position + new Vector3(movement.x, movement.y, 0), Color.yellow);
-            _rigidbody.AddForce(delta * 150.0f, ForceMode2D.Force);
+            _rigidbody.AddForce(delta, ForceMode2D.Impulse);
 
             if (input.GravityTurnLeft)
             {

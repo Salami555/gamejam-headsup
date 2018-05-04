@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace Entities
@@ -75,13 +77,38 @@ namespace Entities
             {
                 if ((other.relativeVelocity.magnitude) > hit_threshhold || other.gameObject.CompareTag("Player"));
                 {
-                    Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(new Vector2(transform.position.x, transform.position.y) + _circ_col.offset, 0.6f);
+                    Vector2 head_pos = (Vector2)transform.position + _circ_col.offset;
+                    Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(head_pos, 0.6f);
+                    ExplosionForce(head_pos, 10, 100);
                     health--;
                     Debug.LogError(health);
                     _rigidbody.AddForce(-transform.up.normalized * hit_knockback, ForceMode2D.Impulse);//Knockback nach "unten", nicht sicher, ob das so gut ist. Eine Explosion-Force wäre vielleicht passender.
                     if (health <= 0)
                     {
                         //Die
+                    }
+                }
+            }
+        }
+
+
+
+        private void ExplosionForce(Vector2 origin, float radius, float strength)
+        {
+            Collider2D[] hits = Physics2D.OverlapCircleAll(origin, radius);
+            List<GameObject> already_hit = new List<GameObject>();//Some Objects have multiple Colliders, so we keep track of the ones, that were already hit
+            foreach (Collider2D hit in hits)
+            {
+                Rigidbody2D _rigid_hit = hit.GetComponent<Rigidbody2D>();
+                if (_rigid_hit != null && !already_hit.Contains(_rigid_hit.gameObject))
+                {
+                    already_hit.Add(_rigid_hit.gameObject);
+                    if (_rigid_hit.bodyType != RigidbodyType2D.Static)
+                    {
+                        float force = Mathf.Clamp((radius - (origin - (Vector2)_rigid_hit.transform.position).magnitude) * 2, 0, strength);
+                        Vector2 force_vec = ((Vector2)_rigid_hit.transform.position - origin).normalized * force;
+                        print(force_vec);
+                        _rigid_hit.AddForce(force_vec, ForceMode2D.Impulse);
                     }
                 }
             }

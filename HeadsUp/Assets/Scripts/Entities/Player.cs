@@ -11,6 +11,8 @@ namespace Entities
         private float hit_knockback = 10;
         private float hit_threshhold = 18;//im Bereich bis ca 14 würde man beim gegen die Wand springen schaden nehmen. Spieler, die aus mehr als 2 Blöcken Höhe auf einen fallen, erzeugen einen größeren Geschwindigkeitsunterschied.
 
+        private bool jump;
+        
         protected override void Start()
         {
             base.Start();
@@ -27,11 +29,12 @@ namespace Entities
             var targetHorizontal = movement * targetVelocity;
             var delta = targetHorizontal - HorizontalMovement;
 
-            if (input.Jump)
+            if (jump)
             {
                 var currentVertical = new Vector2(_rigidbody.velocity.x * LocalGravity.normalized.x * LocalGravity.normalized.x, _rigidbody.velocity.y * LocalGravity.normalized.y * LocalGravity.normalized.y);
                 _rigidbody.AddForce(-currentVertical, ForceMode2D.Impulse);
                 _rigidbody.AddForce(LocalGravity.normalized * -16.0f, ForceMode2D.Impulse);
+                jump = false;
             }
             _rigidbody.AddForce(delta, ForceMode2D.Impulse);
 
@@ -47,6 +50,8 @@ namespace Entities
             {
                 LocalGravity = new Vector2(-LocalGravity.y, LocalGravity.x);
             }
+
+            jump |= input.Jump;
         }
 
         protected override void OnCollisionEnter2D(Collision2D other)

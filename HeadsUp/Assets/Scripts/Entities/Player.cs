@@ -52,7 +52,7 @@ namespace Entities
             {
                 _rigidbody.AddForce(delta, ForceMode2D.Impulse);   
             }
-            else if (HorizontalMovement.magnitude < MovementSpeed * AerialSpeedFactor)
+            else if (HorizontalMovement.magnitude < MovementSpeed * AerialSpeedFactor) //TODO: fails when exceeded in the opposit direction
             {
                 _rigidbody.AddForce(targetHorizontal * AerialAcceleration, ForceMode2D.Impulse);
             }

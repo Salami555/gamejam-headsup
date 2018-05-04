@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Entities
 {
     public class Player : Entity
     {
+        public float MovementSpeed;
+        public float JumpHeight;
+        
         private InputController input;
 
         private CircleCollider2D _circ_col;
@@ -25,7 +29,7 @@ namespace Entities
         {
             base.FixedUpdate();
             var movement = HorizontalVector;
-            var targetVelocity = input.Horizontal * 5.0f;
+            var targetVelocity = input.Horizontal * MovementSpeed;
             var targetHorizontal = movement * targetVelocity;
             var delta = targetHorizontal - HorizontalMovement;
 
@@ -33,7 +37,8 @@ namespace Entities
             {
                 var currentVertical = new Vector2(_rigidbody.velocity.x * LocalGravity.normalized.x * LocalGravity.normalized.x, _rigidbody.velocity.y * LocalGravity.normalized.y * LocalGravity.normalized.y);
                 _rigidbody.AddForce(-currentVertical, ForceMode2D.Impulse);
-                _rigidbody.AddForce(LocalGravity.normalized * -16.0f, ForceMode2D.Impulse);
+                var jumpForce = Mathf.Sqrt(2 * JumpHeight * LocalGravity.magnitude);
+                _rigidbody.AddForce(LocalGravity.normalized * -jumpForce, ForceMode2D.Impulse);
                 jump = false;
             }
             _rigidbody.AddForce(delta, ForceMode2D.Impulse);

@@ -7,6 +7,9 @@ namespace Entities
     {
         public float MovementSpeed;
         public float JumpHeight;
+
+        public float AerialSpeedFactor;
+        public float AerialAcceleration;
         public float RotateTimeout;
         
         private InputController input;
@@ -18,6 +21,7 @@ namespace Entities
 
         private bool jump;
         private float _rotateTimeout = 0;
+        private bool _grounded = false;
         
         protected override void Start()
         {
@@ -43,7 +47,17 @@ namespace Entities
                 _rigidbody.AddForce(LocalGravity.normalized * -jumpForce, ForceMode2D.Impulse);
                 jump = false;
             }
-            _rigidbody.AddForce(delta, ForceMode2D.Impulse);
+
+            if (_grounded)
+            {
+                _rigidbody.AddForce(delta, ForceMode2D.Impulse);   
+            }
+            else if (HorizontalMovement.magnitude < MovementSpeed * AerialSpeedFactor)
+            {
+                _rigidbody.AddForce(targetHorizontal * AerialAcceleration, ForceMode2D.Impulse);
+            }
+
+            _grounded = false;
 
         }
 
@@ -85,6 +99,11 @@ namespace Entities
                     }
                 }
             }
+        }
+
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            _grounded = true;
         }
     }
 }

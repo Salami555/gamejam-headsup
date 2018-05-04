@@ -39,6 +39,15 @@ namespace Entities
             Debug.DrawLine(transform.position, transform.position + new Vector3(targetHorizontal.x, targetHorizontal.y, 0), Color.red);
             Debug.DrawLine(transform.position, transform.position + new Vector3(movement.x, movement.y, 0), Color.yellow);
             _rigidbody.AddForce(delta * 150.0f, ForceMode2D.Force);
+
+            if (input.GravityTurnLeft)
+            {
+                LocalGravity = new Vector2(LocalGravity.y, -LocalGravity.x);
+            }
+            if (input.GravityTurnRight)
+            {
+                LocalGravity = new Vector2(-LocalGravity.y, LocalGravity.x);
+            }
         }
 
         protected override void OnCollisionEnter2D(Collision2D other)

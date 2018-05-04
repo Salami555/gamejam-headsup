@@ -87,7 +87,7 @@ namespace Entities
             base.OnCollisionEnter2D(other);
             if (other.otherCollider == _circ_col)
             {
-                if ((other.relativeVelocity.magnitude) > hit_threshhold || other.gameObject.CompareTag("Player"));
+                if (other.relativeVelocity.magnitude > hit_threshhold || other.gameObject.CompareTag("Player"))
                 {
                     Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(new Vector2(transform.position.x, transform.position.y) + _circ_col.offset, 0.6f);
                     health--;

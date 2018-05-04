@@ -35,13 +35,17 @@ namespace Entities
             }
             _rigidbody.AddForce(delta, ForceMode2D.Impulse);
 
+        }
+
+        private void Update()
+        {
             if (input.GravityTurnLeft)
             {
-                LocalGravity = new Vector2(LocalGravity.y, -LocalGravity.x);
+                LocalGravity = new Vector2(-LocalGravity.y, LocalGravity.x);
             }
             if (input.GravityTurnRight)
             {
-                LocalGravity = new Vector2(-LocalGravity.y, LocalGravity.x);
+                LocalGravity = new Vector2(LocalGravity.y, -LocalGravity.x);
             }
         }
 

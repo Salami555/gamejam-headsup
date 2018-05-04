@@ -36,13 +36,33 @@ namespace Entities
 
 			if (input.Jump)
 			{
-				_rigidbody.AddForce(LocalGravity * -30.0f, ForceMode2D.Force);
+				var currentVertical = new Vector2(_rigidbody.velocity.x * LocalGravity.normalized.x * LocalGravity.normalized.x, _rigidbody.velocity.y * LocalGravity.normalized.y * LocalGravity.normalized.y);
+				_rigidbody.AddForce(-currentVertical, ForceMode2D.Impulse);
+				_rigidbody.AddForce(LocalGravity.normalized * -16.0f, ForceMode2D.Impulse);
 			}
 			//Debug.DrawLine(transform.position, transform.position + new Vector3((movement * delta).x, (movement * delta).y, 0), Color.green);
 			Debug.DrawLine(transform.position, transform.position + new Vector3(currentHorizontal.x, currentHorizontal.y, 0), Color.green);
 			Debug.DrawLine(transform.position, transform.position + new Vector3(targetHorizontal.x, targetHorizontal.y, 0), Color.red);
 			Debug.DrawLine(transform.position, transform.position + new Vector3(movement.x, movement.y, 0), Color.yellow);
-			_rigidbody.AddForce(delta * 15.0f, ForceMode2D.Force);
+			_rigidbody.AddForce(delta * 150.0f, ForceMode2D.Force);
+		}
+
+		private void OnCollisionEnter2D(Collision2D other)
+		{
+			if (other.gameObject.CompareTag("Wall"))
+			{
+				var contactNormal = other.contacts[0].normal;
+				float angle = Vector2.Angle(contactNormal, new Vector2(0, 1));
+				if (angle < 5)
+				{
+					OnGroundTouch();
+				}
+			}
+		}
+
+		private void OnGroundTouch()
+		{
+			//TODO ground touch particles
 		}
 	}
 }

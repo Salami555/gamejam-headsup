@@ -5,9 +5,9 @@ licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: player
-    21300002: entities_1
+    21300002: propeller1
     21300004: player2
-    21300006: entities_3
+    21300006: propeller3
     21300008: entities_4
     21300010: entities_5
     21300012: entities_6
@@ -68,6 +68,9 @@ TextureImporter:
     21300122: entities_61
     21300124: entities_62
     21300126: entities_63
+    21300128: life
+    21300130: propeller0
+    21300132: propeller2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -962,6 +965,76 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: life
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 202
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: propeller0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 202
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: propeller1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 202
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: propeller2
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 202
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: propeller3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 202
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

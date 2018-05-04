@@ -12,7 +12,7 @@ namespace Entities
         private InputController input;
 
         private CircleCollider2D _circ_col;
-        private int health = 5;
+        public int health = 3;
         private float hit_knockback = 10;
         private float hit_threshhold = 18;//im Bereich bis ca 14 würde man beim gegen die Wand springen schaden nehmen.
 

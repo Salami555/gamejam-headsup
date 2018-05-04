@@ -9,6 +9,7 @@ namespace Entities
         private CircleCollider2D _circ_col;
         private int health = 5;
         private float hit_knockback = 10;
+        private float hit_threshhold = 18;//im Bereich bis ca 14 würde man beim gegen die Wand springen schaden nehmen. Spieler, die aus mehr als 2 Blöcken Höhe auf einen fallen, erzeugen einen größeren Geschwindigkeitsunterschied.
 
         protected override void Start()
         {
@@ -38,19 +39,31 @@ namespace Entities
             Debug.DrawLine(transform.position, transform.position + new Vector3(targetHorizontal.x, targetHorizontal.y, 0), Color.red);
             Debug.DrawLine(transform.position, transform.position + new Vector3(movement.x, movement.y, 0), Color.yellow);
             _rigidbody.AddForce(delta * 150.0f, ForceMode2D.Force);
+
+            if (input.GravityTurnLeft)
+            {
+                LocalGravity = new Vector2(LocalGravity.y, -LocalGravity.x);
+            }
+            if (input.GravityTurnRight)
+            {
+                LocalGravity = new Vector2(-LocalGravity.y, LocalGravity.x);
+            }
         }
 
         protected override void OnCollisionEnter2D(Collision2D other)
         {
             base.OnCollisionEnter2D(other);
-            //Braucht noch nen CircleCollider für den Kopf
             if (other.otherCollider == _circ_col)
             {
-                health--;
-                _rigidbody.AddForce(-transform.up.normalized * hit_knockback, ForceMode2D.Impulse);
-                if (health <= 0)
+                if ((other.relativeVelocity.magnitude) > hit_threshhold)
                 {
-                    //Die
+                    Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(new Vector2(transform.position.x, transform.position.y) + _circ_col.offset, 0.6f);
+                    health--;
+                    _rigidbody.AddForce(-transform.up.normalized * hit_knockback, ForceMode2D.Impulse);//Knockback nach "unten", nicht sicher, ob das so gut ist. Eine Explosion-Force wäre vielleicht passender.
+                    if (health <= 0)
+                    {
+                        //Die
+                    }
                 }
             }
         }

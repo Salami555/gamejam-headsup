@@ -8,13 +8,17 @@ namespace Entities
 
 		public Vector2 LocalGravity;
 
+        private CircleCollider2D _circ_col;
 		private Rigidbody2D _rigidbody;
         private InputController input;
-		
+        private int health;
+        private float hit_knockback = 10;
 	
 		// Use this for initialization
 		void Start ()
 		{
+            health = 5;
+            _circ_col = GetComponent<CircleCollider2D>();
 			_rigidbody = GetComponent<Rigidbody2D>();
             input = GetComponent<InputController>();
 		}
@@ -58,11 +62,23 @@ namespace Entities
 					OnGroundTouch();
 				}
 			}
+            //Braucht noch nen CircleCollider für den Kopf
+            if (other.otherCollider == _circ_col)
+            {
+                health--;
+                _rigidbody.AddForce(-transform.up.normalized * hit_knockback, ForceMode2D.Impulse);
+                if (health <= 0)
+                {
+                    //Die
+                }
+            }
 		}
 
 		private void OnGroundTouch()
 		{
 			//TODO ground touch particles
+			Vector2 touchPosition = transform.position - new Vector3(0, 1, 0);
+			Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(touchPosition, 0.3f);
 		}
 	}
 }

@@ -27,4 +27,9 @@ public class FlameScript : MonoBehaviour
 			GetComponent<SpriteRenderer>().sprite = FullFlameSprite;
 		}
 	}
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		
+	}
 }

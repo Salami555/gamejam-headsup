@@ -223,11 +223,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4155686197870340}
   - component: {fileID: 212919622620911934}
+  - component: {fileID: 58784150906216978}
   - component: {fileID: 61217079466256690}
+  - component: {fileID: 61815345902141848}
   - component: {fileID: 114572940969030924}
   - component: {fileID: 50904718940920846}
   - component: {fileID: 114185822523389124}
-  - component: {fileID: 58784150906216978}
   - component: {fileID: 114463779900802082}
   - component: {fileID: 82661595152749134}
   m_Layer: 0
@@ -782,6 +783,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.6666667}
   m_EdgeRadius: 0
+--- !u!61 &61815345902141848
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813971970594222}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.041540563}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.375, y: 0.7916667}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.375, y: 0.70858556}
+  m_EdgeRadius: 0
 --- !u!61 &61969307442557226
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -1112,6 +1138,8 @@ MonoBehaviour:
   turnEffect: {fileID: 1865684551771342, guid: cb297d7b7c137594db5448920cca15c3, type: 2}
   playerName: Red
   winText: {fileID: 0}
+  AliveBoxCollider: {fileID: 61217079466256690}
+  DeadBoxCollider: {fileID: 61815345902141848}
   health: 3
   _framesSinceGrounded: 0
 --- !u!114 &114576729741127776

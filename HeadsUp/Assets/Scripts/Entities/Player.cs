@@ -178,11 +178,19 @@ namespace Entities
 		public void DecreaseHealth()
 		{
 			health--;
-			if (!alive) Kill();
+			if (!alive)
+			{
+				Kill();
+			}
+			else
+			{
+				GetComponent<PlayerSounds>().playHitSound();
+			}
 		}
 
 		public void Kill()
 		{
+			GetComponent<PlayerSounds>().playDieSound();
 			_circ_col.enabled = false;
 			AliveBoxCollider.enabled = false;
 			DeadBoxCollider.enabled = true;

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using Entities;
 
@@ -16,6 +17,16 @@ public class PlayerSounds : MonoBehaviour
     private void Awake()
     {
         player = GetComponent<Player>();
+    }
+
+    public void playHitSound()
+    {
+        output.PlayOneShot(playerHit);
+    }
+
+    public void playDieSound()
+    {
+        output.PlayOneShot(playerDie);
     }
 
     private void Update()

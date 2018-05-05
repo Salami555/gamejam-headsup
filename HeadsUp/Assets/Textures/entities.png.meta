@@ -32,7 +32,7 @@ TextureImporter:
     21300050: entities_25
     21300052: entities_26
     21300054: flames_idle_3
-    21300056: entities_28
+    21300056: cage
     21300058: entities_29
     21300060: entities_30
     21300062: entities_31
@@ -76,6 +76,7 @@ TextureImporter:
     21300138: flames_idle_1
     21300140: flames_idle_2
     21300142: heart_collectable
+    21300144: cage_collectable
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -387,13 +388,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: entities_28
+      name: cage
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
-        width: 32
-        height: 32
+        x: 90
+        y: 201
+        width: 35
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1022,6 +1023,20 @@ TextureImporter:
         serializedVersion: 2
         x: 144
         y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cage_collectable
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 202
         width: 16
         height: 16
       alignment: 0

@@ -12,6 +12,8 @@ public class FlameScript : MonoBehaviour
 
 	private float timeSinceLastFlameChange;
 	private int currentFrame;
+
+	public ParticleSystem chemtrails;
 	
 	private void Start()
 	{
@@ -32,10 +34,16 @@ public class FlameScript : MonoBehaviour
 				case Player.ThrustState.FULL:
 					GetComponent<SpriteRenderer>().sprite = FullFlameSprites[currentFrame % FullFlameSprites.Length];
 					GetComponent<SpriteRenderer>().color = Color.white;
+					Instantiate(chemtrails, transform.position, transform.rotation);
 					break;
 				case Player.ThrustState.HALF:
 					GetComponent<SpriteRenderer>().sprite = HalfFlameSprites[currentFrame % HalfFlameSprites.Length];
 					GetComponent<SpriteRenderer>().color = Color.white;
+					if (Random.value > 0.8)
+					{
+						Instantiate(chemtrails, transform.position, transform.rotation);
+					}
+
 					break;
 				case Player.ThrustState.ZERO:
 					GetComponent<SpriteRenderer>().color = new Color(0.0f, 0.0f, 0.0f, 0.0f);

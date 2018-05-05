@@ -41,6 +41,7 @@ namespace Entities
         public float RotateTimeout;
 
         public GameObject hit_explosion;
+        //public GameObject turnEffect;
 
         public string playerName;
         public Text winText;
@@ -100,12 +101,16 @@ namespace Entities
             {
                 if (input.GravityTurnLeft)
                 {
-                    LocalGravity = new Vector2(-LocalGravity.y, LocalGravity.x);
+                    /*GameObject this_effect = Instantiate(turnEffect, transform);
+                    this_effect.GetComponent<TurnEffect>().toRotate = Quaternion.FromToRotation(transform.up, -transform.right);
+                    */LocalGravity = new Vector2(-LocalGravity.y, LocalGravity.x);
                     _rotateTimeout = RotateTimeout;
                 }
                 if (input.GravityTurnRight)
                 {
-                    LocalGravity = new Vector2(LocalGravity.y, -LocalGravity.x);
+                    /*GameObject this_effect = Instantiate(turnEffect, transform);
+                    this_effect.GetComponent<TurnEffect>().toRotate = Quaternion.FromToRotation(transform.up, transform.right);
+                    */LocalGravity = new Vector2(LocalGravity.y, -LocalGravity.x);
                     _rotateTimeout = RotateTimeout;
                 }
             }

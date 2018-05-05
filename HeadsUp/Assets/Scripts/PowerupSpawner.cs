@@ -5,7 +5,7 @@ using UnityEngine;
 public class PowerupSpawner : MonoBehaviour
 {
 
-	public GameObject HeartContainer;
+	public GameObject[] Containers;
 	public float spawnTimeout;
 	private float _spawnTimeout = 0;
 
@@ -25,14 +25,16 @@ public class PowerupSpawner : MonoBehaviour
 			var powerupCount = GameObject.FindGameObjectsWithTag("Powerup").Length;
 			if (powerupCount < 3)
 			{
-				SpawnNew();
+				var spawnee = Containers[Random.Range(0, Containers.Length - 1)];
+				SpawnNew(spawnee);
 			}
 		}
 	}
 	
-	private void SpawnNew()
+	private void SpawnNew(GameObject spawnee)
 	{
+		
 		var spawnPos = new Vector3(Random.Range(-5,5), Random.Range(-5,5), 0);
-		Instantiate(HeartContainer, spawnPos, HeartContainer.GetComponent<Transform>().rotation);
+		Instantiate(spawnee, spawnPos, spawnee.GetComponent<Transform>().rotation);
 	}
 }

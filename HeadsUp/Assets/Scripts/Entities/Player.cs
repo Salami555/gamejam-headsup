@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Entities
 {
@@ -13,6 +14,9 @@ namespace Entities
         public float AerialSpeedFactor;
         public float AerialAcceleration;
         public float RotateTimeout;
+
+        public string playerName;
+        public GameObject winText;
         
         private InputController input;
 
@@ -99,7 +103,8 @@ namespace Entities
                     _rigidbody.AddForce(-transform.up.normalized * hit_knockback, ForceMode2D.Impulse);//Knockback nach "unten", nicht sicher, ob das so gut ist. Eine Explosion-Force wäre vielleicht passender.
                     if (health <= 0)
                     {
-                        //Die
+                        winText.GetComponent<Text>().text = "Player " + playerName + " won!";
+                        winText.SetActive(true);
                     }
                 }
             }

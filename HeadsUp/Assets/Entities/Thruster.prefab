@@ -262,6 +262,8 @@ MonoBehaviour:
   - {fileID: 21300048, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   - {fileID: 21300138, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   - {fileID: 21300140, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  chemtrails: {fileID: 198121317651790352, guid: 2d5e17682b7e045409e04d28b746245d,
+    type: 2}
 --- !u!114 &114684729269245506
 MonoBehaviour:
   m_ObjectHideFlags: 1

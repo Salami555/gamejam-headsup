@@ -362,6 +362,10 @@ MonoBehaviour:
   AerialSpeedFactor: 1
   AerialAcceleration: 0.5
   RotateTimeout: 0.1
+  hit_explosion: {fileID: 1285367049366870, guid: b30c05b8309b6d34f94d9c1af0563649,
+    type: 2}
+  playerName: 
+  winText: {fileID: 0}
   health: 3
   _grounded: 0
 --- !u!114 &114242641799541324

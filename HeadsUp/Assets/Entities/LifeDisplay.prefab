@@ -159,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minHealth: 2
   player: {fileID: 0}
+  deadSprite: {fileID: 21300058, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
 --- !u!114 &114452578249489534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minHealth: 1
   player: {fileID: 0}
+  deadSprite: {fileID: 21300058, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
 --- !u!114 &114545708632615790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minHealth: 3
   player: {fileID: 0}
+  deadSprite: {fileID: 21300058, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
 --- !u!114 &114582115806460418
 MonoBehaviour:
   m_ObjectHideFlags: 1

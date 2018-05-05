@@ -8,6 +8,31 @@ namespace Entities
 {
     public class Player : Entity
     {
+        public enum ThrustState
+        {
+            FULL,
+            HALF,
+            ZERO
+        }
+
+        public ThrustState Thrust
+        {
+            get
+            {
+                if (input.Vertical > 0.5f)
+                {
+                    return ThrustState.FULL;
+                } else if (input.Vertical > -0.5f)
+                {
+                    return ThrustState.HALF;
+                } else
+
+                {
+                    return ThrustState.ZERO;
+                }
+            }
+        }
+        
         public float MovementSpeed;
         public float JumpHeight;
 
@@ -18,7 +43,7 @@ namespace Entities
         public GameObject hit_explosion;
 
         public string playerName;
-        public GameObject winText;
+        public Text winText;
         
         private InputController input;
 
@@ -48,18 +73,15 @@ namespace Entities
             var delta = targetHorizontal - HorizontalMovement;
 
             Debug.DrawLine(transform.position, transform.position + new Vector3(input.Horizontal, input.Vertical, 0));
-            
-            if (input.Vertical > 0.5f)
+
+            switch (Thrust)
             {
-                _rigidbody.AddForce(LocalGravity.normalized * -JumpHeight);
-                //var currentVertical = new Vector2(_rigidbody.velocity.x * LocalGravity.normalized.x * LocalGravity.normalized.x, _rigidbody.velocity.y * LocalGravity.normalized.y * LocalGravity.normalized.y);
-                //_rigidbody.AddForce(-currentVertical, ForceMode2D.Impulse);
-                //var jumpForce = Mathf.Sqrt(2 * JumpHeight * LocalGravity.magnitude);
-                //_rigidbody.AddForce(LocalGravity.normalized * -jumpForce, ForceMode2D.Impulse);
-                jump = false;
-            } else if (input.Vertical > -0.5f)
-            {
-                _rigidbody.AddForce(-LocalGravity, ForceMode2D.Force);
+                case ThrustState.FULL:
+                    _rigidbody.AddForce(LocalGravity.normalized * -JumpHeight);
+                    break;
+                case ThrustState.HALF:
+                    _rigidbody.AddForce(-LocalGravity * 0.8f, ForceMode2D.Force);
+                    break;
             }
             
             _rigidbody.AddForce(targetHorizontal * AerialAcceleration, ForceMode2D.Force);
@@ -106,8 +128,8 @@ namespace Entities
                     _rigidbody.AddForce(-transform.up.normalized * hit_knockback, ForceMode2D.Impulse);//Knockback nach "unten", nicht sicher, ob das so gut ist. Eine Explosion-Force wäre vielleicht passender.
                     if (health <= 0)
                     {
-                        winText.GetComponent<Text>().text = "Player " + playerName + " won!";
-                        winText.SetActive(true);
+                        winText.text = "Player " + other.gameObject.GetComponent<Player>().playerName + " won!";
+                        winText.enabled = true;
                     }
                 }
             }

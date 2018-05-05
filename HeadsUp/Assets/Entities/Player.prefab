@@ -362,6 +362,10 @@ MonoBehaviour:
   AerialSpeedFactor: 1
   AerialAcceleration: 0.5
   RotateTimeout: 0.1
+  hit_explosion: {fileID: 1285367049366870, guid: b30c05b8309b6d34f94d9c1af0563649,
+    type: 2}
+  playerName: 
+  winText: {fileID: 0}
   health: 3
   _grounded: 0
 --- !u!114 &114242641799541324
@@ -390,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FullFlameSprite: {fileID: 21300032, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   HalfFlameSprite: {fileID: 21300048, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
-  player: {fileID: 114012752762163260}
+  Player: {fileID: 114012752762163260}
 --- !u!114 &114390223494613938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -404,7 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FullFlameSprite: {fileID: 21300032, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   HalfFlameSprite: {fileID: 21300048, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
-  player: {fileID: 114012752762163260}
+  Player: {fileID: 114012752762163260}
 --- !u!114 &114435792521273928
 MonoBehaviour:
   m_ObjectHideFlags: 1

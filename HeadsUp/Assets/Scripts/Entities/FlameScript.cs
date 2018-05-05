@@ -8,8 +8,13 @@ public class FlameScript : MonoBehaviour
 	public Sprite FullFlameSprite;
 	public Sprite HalfFlameSprite;
 
-	public Player Player;
-	
+	private Player Player;
+
+	private void Start()
+	{
+		Player = transform.parent.gameObject.GetComponent<Player>();
+	}
+
 	// Update is called once per frame
 	void Update () {
 		switch (Player.Thrust)

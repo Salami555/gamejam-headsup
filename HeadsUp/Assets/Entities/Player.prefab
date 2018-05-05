@@ -351,6 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4208198620902942}
   - component: {fileID: 212057163033804480}
+  - component: {fileID: 60370055471583350}
   m_Layer: 0
   m_Name: cage
   m_TagString: Untagged
@@ -701,6 +702,36 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.29991305}
   serializedVersion: 2
   m_Radius: 0.66867995
+--- !u!60 &60370055471583350
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1934370102499282}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4583334, y: 0.7916667}
+    newSize: {x: 1.4583334, y: 0.7916667}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.7306793, y: 0.07168907}
+      - {x: 0.2909646, y: 0.4057923}
+      - {x: -0.2487869, y: 0.4057923}
+      - {x: -0.7341461, y: 0.0679903}
+      - {x: -0.7291667, y: -0.39583334}
+      - {x: 0.7291667, y: -0.39583334}
 --- !u!61 &61217079466256690
 BoxCollider2D:
   m_ObjectHideFlags: 1

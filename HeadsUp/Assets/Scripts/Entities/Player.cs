@@ -76,8 +76,6 @@ namespace Entities
         {
             base.FixedUpdate();
 
-            Debug.DrawLine(transform.position, transform.position + new Vector3(input.Horizontal, input.Vertical, 0));
-
             switch (Thrust)
             {
                 case ThrustState.FULL:
@@ -87,10 +85,6 @@ namespace Entities
                     _rigidbody.AddForce(LocalGravity.normalized * -HalfThrust, ForceMode2D.Force);
                     break;
             }
-            
-            var movement = HorizontalVector;
-            var targetHorizontal = movement * input.Horizontal;
-            _rigidbody.AddForce(targetHorizontal * HorizontalThrust, ForceMode2D.Force);
             
             _framesSinceGrounded++;
 

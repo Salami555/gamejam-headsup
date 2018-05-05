@@ -145,7 +145,7 @@ namespace Entities
                     Debug.Log(health);
                     if (health == 0 && other.gameObject.GetComponent<Player>() != null)
                     {
-                        StartCoroutine(PlayerWon(other.gameObject.GetComponent<Player>().playerName));
+                        transform.parent.GetComponent<WinManager>().CheckLives();
                     }
                 }
             }
@@ -181,13 +181,6 @@ namespace Entities
             }
         }
 
-        private IEnumerator PlayerWon(string winnerName)
-        {
-            winText.text = "Player " + winnerName + " won!";
-            winText.enabled = true;
-            InputController.Reset();
-            yield return new WaitForSeconds(3.0f);
-            SceneManager.LoadScene(0);
-        }
+        
     }
 }

@@ -9,16 +9,16 @@ namespace Entities
 	{
 
 		public Vector2 LocalGravity;
-        public GameObject ground_hit_effect;
+		public GameObject ground_hit_effect;
 
-        
+
 		protected Rigidbody2D _rigidbody;
 
 		protected Vector2 HorizontalVector
 		{
 			get { return new Vector2(-LocalGravity.normalized.y, LocalGravity.normalized.x); }
 		}
-		
+
 		protected Vector2 HorizontalMovement
 		{
 			get
@@ -27,7 +27,7 @@ namespace Entities
 				return new Vector2(horizontal.x * horizontal.x * _rigidbody.velocity.x, horizontal.y * horizontal.y * _rigidbody.velocity.y);
 			}
 		}
-		
+
 		protected Vector2 VerticalMovement
 		{
 			get
@@ -36,20 +36,20 @@ namespace Entities
 				return new Vector2(gravity.x * gravity.x * _rigidbody.velocity.x, gravity.y * gravity.y * _rigidbody.velocity.y);
 			}
 		}
-        
-	
+
+
 		// Use this for initialization
-		protected virtual void Start ()
+		protected virtual void Start()
 		{
 			_rigidbody = GetComponent<Rigidbody2D>();
 		}
 
 		protected virtual void FixedUpdate()
 		{
-            if (CompareTag("Player"))
-            {
-                transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.down, LocalGravity));
-            }
+			if (CompareTag("Player"))
+			{
+				transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.down, LocalGravity));
+			}
 			_rigidbody.AddForce(LocalGravity, ForceMode2D.Force);
 		}
 
@@ -57,18 +57,25 @@ namespace Entities
 		{
 			if (other.gameObject.CompareTag("Wall"))
 			{
-                if (other.contacts.Length > 0)
-                {
-                    var contactNormal = other.contacts[0].normal;
+				if (other.contacts.Length > 0)
+				{
+					var contactNormal = other.contacts[0].normal;
 
-		            Camera.main.GetComponent<ScreenShake>().MakeDirectedShake(0.2f, 0.2f, _rigidbody.velocity.normalized);
-	                
-                    float angle = Vector2.Angle(contactNormal, LocalGravity * -1);
-                    if (angle < 5)
-                    {
-                        OnGroundTouch();
-                    }
-                }
+					try
+					{
+						Camera.main.GetComponent<ScreenShake>().MakeDirectedShake(0.2f, 0.2f, _rigidbody.velocity.normalized);
+					}
+					catch (NullReferenceException ex)
+					{
+						Debug.Log(ex); // TODO
+					}
+
+					float angle = Vector2.Angle(contactNormal, LocalGravity * -1);
+					if (angle < 5)
+					{
+						OnGroundTouch();
+					}
+				}
 			}
 		}
 
@@ -78,7 +85,7 @@ namespace Entities
 			Vector3 offset = -LocalGravity.normalized;
 			Vector2 touchPosition = transform.position - offset;
 			Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(touchPosition, 0.3f);
-            Instantiate(ground_hit_effect, touchPosition, transform.rotation);
+			Instantiate(ground_hit_effect, touchPosition, transform.rotation);
 		}
 	}
 }

@@ -9,7 +9,7 @@ public class LifeScript : MonoBehaviour
 	public int minHealth;
 	public Player player;
 
-	public Sprite deadSprite;
+	public Sprite aliveSprite, deadSprite;
 
 	public bool showsHealth
 	{
@@ -19,11 +19,17 @@ public class LifeScript : MonoBehaviour
 		}
 	}
 
+	void Start()
+	{
+		Debug.Log("started");
+		aliveSprite = GetComponent<SpriteRenderer>().sprite;
+	}
+
 	// Update is called once per frame
 	void Update()
 	{
-		// GetComponent<SpriteRenderer>().enabled = showsHealth;
-		if (!showsHealth)
-			GetComponent<SpriteRenderer>().sprite = deadSprite;
+		GetComponent<SpriteRenderer>().sprite = showsHealth
+													? aliveSprite
+													: deadSprite;
 	}
 }

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4086064013391716}
   - component: {fileID: 212670670359474222}
   - component: {fileID: 61069398469363776}
-  - component: {fileID: 114377633441879304}
+  - component: {fileID: 114529081278176622}
   - component: {fileID: 50727755680701730}
   m_Layer: 0
   m_Name: SlowPowerup
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6826105, y: 0.66255283}
   m_EdgeRadius: 0
---- !u!114 &114377633441879304
+--- !u!114 &114529081278176622
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,12 +96,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1554479073114624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce90b361b2594d99a63fd1b48bf4be81, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e714fb4aaad47348ffc09cd2712bb18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   LocalGravity: {x: 0, y: 0}
   ground_hit_effect: {fileID: 0}
-  ShieldTime: 10
+  SlowTime: 10
 --- !u!212 &212670670359474222
 SpriteRenderer:
   m_ObjectHideFlags: 1

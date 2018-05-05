@@ -211,6 +211,7 @@ namespace Entities
 		public void Collect(Powerup item)
 		{
 			Debug.Log("Player Powerup got");
+			GetComponent<PlayerSounds>().playPowerupSound();
 			item.ApplyEffect(this);
 		}
 

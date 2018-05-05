@@ -6139,7 +6139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winText: {fileID: 999120401}
   winTimeOut: 3
---- !u!1001 &1781301157
+--- !u!1001 &2062654670
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -6177,16 +6177,6 @@ Prefab:
     - target: {fileID: 4736590928991050, guid: b8caaf614e9824efd925bddc6c8f0519, type: 2}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114156914733712900, guid: b8caaf614e9824efd925bddc6c8f0519,
-        type: 2}
-      propertyPath: maxPowerups
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114156914733712900, guid: b8caaf614e9824efd925bddc6c8f0519,
-        type: 2}
-      propertyPath: spawnTimeout
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8caaf614e9824efd925bddc6c8f0519, type: 2}

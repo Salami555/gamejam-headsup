@@ -50,6 +50,8 @@ namespace Entities
 
         private CircleCollider2D _circ_col;
         public int health;
+        private float shieldTime;
+        
         private float hit_knockback = 10;
         private float hit_threshhold = 18;//im Bereich bis ca 14 würde man beim gegen die Wand springen schaden nehmen.
 
@@ -97,6 +99,8 @@ namespace Entities
         private void Update()
         {
             _rotateTimeout -= Time.deltaTime;
+            shieldTime = Math.Max(0, shieldTime - Time.deltaTime);
+            
             if (_rotateTimeout < 0)
             {
                 if (input.GravityTurnLeft)
@@ -145,9 +149,19 @@ namespace Entities
         public void Collect(Powerup item)
         {
             Debug.Log("Player Powerup got");
+            item.ApplyEffect(this);
+        }
+
+        public void IncreaseHealth()
+        {
             health = Math.Min(health + 1, 3);
         }
 
+        public void ActivateShield(float time)
+        {
+            shieldTime = time;
+        }
+        
         private void OnCollisionStay2D(Collision2D other)
         {
 

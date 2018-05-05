@@ -38,27 +38,26 @@ namespace Entities
         {
             base.FixedUpdate();
             var movement = HorizontalVector;
-            var targetVelocity = input.Horizontal * MovementSpeed;
+            var targetVelocity = input.Horizontal;
             var targetHorizontal = movement * targetVelocity;
             var delta = targetHorizontal - HorizontalMovement;
 
-            if (jump)
+            Debug.DrawLine(transform.position, transform.position + new Vector3(input.Horizontal, input.Vertical, 0));
+            
+            if (input.Vertical > 0.5f)
             {
-                var currentVertical = new Vector2(_rigidbody.velocity.x * LocalGravity.normalized.x * LocalGravity.normalized.x, _rigidbody.velocity.y * LocalGravity.normalized.y * LocalGravity.normalized.y);
-                _rigidbody.AddForce(-currentVertical, ForceMode2D.Impulse);
-                var jumpForce = Mathf.Sqrt(2 * JumpHeight * LocalGravity.magnitude);
-                _rigidbody.AddForce(LocalGravity.normalized * -jumpForce, ForceMode2D.Impulse);
+                _rigidbody.AddForce(LocalGravity.normalized * -JumpHeight);
+                //var currentVertical = new Vector2(_rigidbody.velocity.x * LocalGravity.normalized.x * LocalGravity.normalized.x, _rigidbody.velocity.y * LocalGravity.normalized.y * LocalGravity.normalized.y);
+                //_rigidbody.AddForce(-currentVertical, ForceMode2D.Impulse);
+                //var jumpForce = Mathf.Sqrt(2 * JumpHeight * LocalGravity.magnitude);
+                //_rigidbody.AddForce(LocalGravity.normalized * -jumpForce, ForceMode2D.Impulse);
                 jump = false;
-            }
-
-            if (_grounded)
+            } else if (input.Vertical > -0.5f)
             {
-                _rigidbody.AddForce(delta, ForceMode2D.Impulse);   
+                _rigidbody.AddForce(-LocalGravity, ForceMode2D.Force);
             }
-            else if (HorizontalMovement.magnitude < MovementSpeed * AerialSpeedFactor) //TODO: fails when exceeded in the opposit direction
-            {
-                _rigidbody.AddForce(targetHorizontal * AerialAcceleration, ForceMode2D.Impulse);
-            }
+            
+            _rigidbody.AddForce(targetHorizontal * AerialAcceleration, ForceMode2D.Force);
 
             _grounded = false;
 
@@ -82,7 +81,7 @@ namespace Entities
             }
             
 
-            jump |= input.Jump;
+            //jump |= input.Jump;
         }
 
         protected override void OnCollisionEnter2D(Collision2D other)

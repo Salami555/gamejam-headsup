@@ -10,6 +10,7 @@ public class InputController : MonoBehaviour
     private static int playerCounter;
 
     private const string horizontalAxis = "Horizontal";
+    private const string verticalAxis = "Vertical";
     private const string gravityTurnRightButton = "GravityTurnRight";
     private const string gravityTurnLeftButton = "GravityTurnLeft";
     private const string jumpButton = "Jump";
@@ -23,7 +24,7 @@ public class InputController : MonoBehaviour
     }
 
     public float Horizontal { get { return Input.GetAxis(horizontalAxis + playerNumber); } }
+    public float Vertical { get { return Input.GetAxis(verticalAxis + playerNumber); } }
     public bool GravityTurnLeft { get { return Input.GetButtonDown(gravityTurnLeftButton + playerNumber); } }
     public bool GravityTurnRight { get { return Input.GetButtonDown(gravityTurnRightButton + playerNumber); } }
-    public bool Jump { get { return Input.GetButtonDown(jumpButton + playerNumber); } }
 }

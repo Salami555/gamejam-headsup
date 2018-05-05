@@ -15,7 +15,7 @@ public class InputController : MonoBehaviour
     private const string gravityTurnLeftButton = "GravityTurnLeft";
     private const string jumpButton = "Jump";
 
-    private void Awake()
+    private void Start()
     {
         this.playerNumber = playerCounter++;
         if (controllers == null)
@@ -27,4 +27,10 @@ public class InputController : MonoBehaviour
     public float Vertical { get { return Input.GetAxis(verticalAxis + playerNumber); } }
     public bool GravityTurnLeft { get { return Input.GetButtonDown(gravityTurnLeftButton + playerNumber); } }
     public bool GravityTurnRight { get { return Input.GetButtonDown(gravityTurnRightButton + playerNumber); } }
+
+    public static void Reset()
+    {
+        controllers = null;
+        playerCounter = 0;
+    }
 }

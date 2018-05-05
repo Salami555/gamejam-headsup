@@ -17,7 +17,7 @@ public class FlameScript : MonoBehaviour
 	
 	private void Start()
 	{
-		Player = transform.parent.gameObject.GetComponent<Player>();
+		Player = transform.parent.parent.parent.gameObject.GetComponent<Player>();
 	}
 
 	// Update is called once per frame

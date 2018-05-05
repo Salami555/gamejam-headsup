@@ -16,7 +16,7 @@ namespace Entities
             Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Water"), LayerMask.NameToLayer("Water"));
             if (InitialVelocity.magnitude < 0.01f)
             {
-                InitialVelocity = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * Random.RandomRange(InitialVelocityRange.x, InitialVelocityRange.y);
+                InitialVelocity = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f)).normalized * Random.Range(InitialVelocityRange.x, InitialVelocityRange.y);
             }
             GetComponent<Rigidbody2D>().AddForce(InitialVelocity, ForceMode2D.Impulse);
         }

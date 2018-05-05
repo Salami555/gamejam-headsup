@@ -135,6 +135,12 @@ namespace Entities
             }
         }
 
+        public void Collect(Powerup item)
+        {
+            Debug.Log("Player Powerup got");
+            health = Math.Min(health++, 3);
+        }
+
 
 
         /*

@@ -23,7 +23,7 @@ namespace Entities
                 if (input.Vertical > 0.5f)
                 {
                     return ThrustState.FULL;
-                } else if (input.Vertical > -0.5f)
+                } else if (input.Vertical > -0.5f && !isGrounded())
                 {
                     return ThrustState.HALF;
                 } else
@@ -54,7 +54,12 @@ namespace Entities
 
         private bool jump;
         private float _rotateTimeout = 0;
-        public bool _grounded = false;
+        public int _framesSinceGrounded = 0;
+
+        private bool isGrounded()
+        {
+            return _framesSinceGrounded < 3;
+        }
         
         protected override void Start()
         {
@@ -83,8 +88,8 @@ namespace Entities
             var movement = HorizontalVector;
             var targetHorizontal = movement * input.Horizontal;
             _rigidbody.AddForce(targetHorizontal * HorizontalThrust, ForceMode2D.Force);
-
-            _grounded = false;
+            
+            _framesSinceGrounded++;
 
         }
 
@@ -140,7 +145,16 @@ namespace Entities
 
         private void OnCollisionStay2D(Collision2D other)
         {
-            _grounded = true;
+
+            foreach (var foo in other.contacts)
+            {
+                var contactNormal = foo.normal;
+                float angle = Vector2.Angle(contactNormal, LocalGravity * -1);
+                if (angle < 5)
+                {
+                    _framesSinceGrounded = 0;
+                }
+            }
         }
 
         private IEnumerator PlayerWon(string winnerName)

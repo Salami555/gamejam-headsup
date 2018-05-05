@@ -7,6 +7,7 @@ public class PlayerExplodeScript : MonoBehaviour
 {
 
 	private Vector2 _randomDirection;
+	private float _randomRotation;
 	
 	private Player _player;
 	// Use this for initialization
@@ -14,13 +15,15 @@ public class PlayerExplodeScript : MonoBehaviour
 	{
 		_player = transform.GetComponentInParent<Player>();
 		_randomDirection = new Vector2(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f));
+		_randomRotation = Random.Range(-50.0f, 50.0f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (_player.health <= 0)
 		{
-			transform.Translate(_randomDirection * Time.deltaTime * 20.0f);
+			transform.Rotate(0, 0, Time.deltaTime * _randomRotation);
+			transform.Translate(_randomDirection * Time.deltaTime * 5.0f, Space.World);
 		}
 	}
 }

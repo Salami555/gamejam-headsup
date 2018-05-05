@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4482197223589972}
   - component: {fileID: 212583155238609818}
+  - component: {fileID: 114106310345903208}
   m_Layer: 0
   m_Name: fuel_pipe
   m_TagString: Untagged
@@ -51,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4959240505051262}
   - component: {fileID: 212456010601751704}
+  - component: {fileID: 114221162424560328}
   m_Layer: 0
   m_Name: preheater
   m_TagString: Untagged
@@ -68,6 +70,7 @@ GameObject:
   - component: {fileID: 4518839690013602}
   - component: {fileID: 212791629529538584}
   - component: {fileID: 114435792521273928}
+  - component: {fileID: 114934503503370662}
   m_Layer: 0
   m_Name: LifeDisplay3
   m_TagString: Untagged
@@ -84,6 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4074628166888746}
   - component: {fileID: 212440839467825752}
+  - component: {fileID: 114617279286597536}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -102,6 +106,7 @@ GameObject:
   - component: {fileID: 212191065968836348}
   - component: {fileID: 114390223494613938}
   - component: {fileID: 61053358909643258}
+  - component: {fileID: 114119895546470098}
   m_Layer: 0
   m_Name: Flame left
   m_TagString: Untagged
@@ -118,6 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4049475752237378}
   - component: {fileID: 212699023277506376}
+  - component: {fileID: 114494975358792388}
   m_Layer: 0
   m_Name: pipes
   m_TagString: Untagged
@@ -134,6 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4718211521895446}
   - component: {fileID: 212935989632136338}
+  - component: {fileID: 114086366462193416}
   m_Layer: 0
   m_Name: pipes
   m_TagString: Untagged
@@ -150,6 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4466199432939614}
   - component: {fileID: 212171725058508924}
+  - component: {fileID: 114353925922796884}
   m_Layer: 0
   m_Name: main
   m_TagString: Untagged
@@ -167,6 +175,7 @@ GameObject:
   - component: {fileID: 4011259169544892}
   - component: {fileID: 212253784756668600}
   - component: {fileID: 114683469659111880}
+  - component: {fileID: 114160064182065378}
   m_Layer: 0
   m_Name: Propeller
   m_TagString: Untagged
@@ -184,6 +193,7 @@ GameObject:
   - component: {fileID: 4300977583818460}
   - component: {fileID: 212649190103389380}
   - component: {fileID: 114242641799541324}
+  - component: {fileID: 114984813855485066}
   m_Layer: 0
   m_Name: LifeDisplay1
   m_TagString: Untagged
@@ -200,6 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4097756718776472}
   - component: {fileID: 212984760687062052}
+  - component: {fileID: 114015783147420974}
   m_Layer: 0
   m_Name: fuel_pipe
   m_TagString: Untagged
@@ -217,6 +228,7 @@ GameObject:
   - component: {fileID: 4877335374185204}
   - component: {fileID: 212666767149528530}
   - component: {fileID: 114828290979687018}
+  - component: {fileID: 114697062776008866}
   m_Layer: 0
   m_Name: LifeDisplay2
   m_TagString: Untagged
@@ -254,6 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4403491770135960}
   - component: {fileID: 212554520888958800}
+  - component: {fileID: 114501108810846262}
   m_Layer: 0
   m_Name: preheater
   m_TagString: Untagged
@@ -270,6 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4552889142422462}
   - component: {fileID: 212082041673236200}
+  - component: {fileID: 114455022054376092}
   m_Layer: 0
   m_Name: main
   m_TagString: Untagged
@@ -303,6 +317,7 @@ GameObject:
   - component: {fileID: 212223952361378046}
   - component: {fileID: 114252958995326354}
   - component: {fileID: 61272172599258160}
+  - component: {fileID: 114719935561563020}
   m_Layer: 0
   m_Name: Flame right
   m_TagString: Untagged
@@ -694,7 +709,73 @@ MonoBehaviour:
   playerName: Red
   winText: {fileID: 0}
   health: 3
-  _grounded: 0
+  _framesSinceGrounded: 0
+--- !u!114 &114015783147420974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510702748648418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114086366462193416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1479783590695858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114106310345903208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1032985499247794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114119895546470098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339198992214256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114160064182065378
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1492374307364640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114221162424560328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1064172053165960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114242641799541324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -727,6 +808,17 @@ MonoBehaviour:
   - {fileID: 21300048, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   - {fileID: 21300138, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   - {fileID: 21300140, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+--- !u!114 &114353925922796884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1481345294026314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114390223494613938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -759,6 +851,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minHealth: 3
   player: {fileID: 114012752762163260}
+--- !u!114 &114455022054376092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1783841513217262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114494975358792388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1405531482191982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114501108810846262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1659961786323718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114617279286597536
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1309328468677294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114683469659111880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -776,6 +912,28 @@ MonoBehaviour:
   - {fileID: 21300132, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   - {fileID: 21300006, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   timePerImage: 0.05
+--- !u!114 &114697062776008866
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1514305933665808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114719935561563020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1925675990531034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114828290979687018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -798,6 +956,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c21dcdda9dde754399fa73ef65d9a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114934503503370662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071669485819090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114984813855485066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1492396107150326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212082041673236200

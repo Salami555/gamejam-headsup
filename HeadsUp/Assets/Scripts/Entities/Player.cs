@@ -126,18 +126,19 @@ namespace Entities
         protected override void OnCollisionEnter2D(Collision2D other)
         {
             base.OnCollisionEnter2D(other);
+            
             if (other.otherCollider == _circ_col)
             {
                 if (other.relativeVelocity.magnitude > hit_threshhold || other.gameObject.CompareTag("Player"))
                 {
+                    Camera.main.GetComponent<ScreenShake>().MakeUndirectedShake(0.5f, 0.4f);
                     ContactPoint2D[] contacts = new ContactPoint2D[1];
                     other.GetContacts(contacts);
                     Vector2 collision_pos =contacts[0].point;
                     Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(collision_pos, 0.6f);
-                    GameObject this_explosion = Instantiate(hit_explosion, collision_pos, transform.rotation);
+                    Instantiate(hit_explosion, collision_pos, transform.rotation);
                     health--;
                     Debug.Log(health);
-                    _rigidbody.AddForce(-transform.up.normalized * hit_knockback, ForceMode2D.Impulse);//Knockback nach "unten", nicht sicher, ob das so gut ist. Eine Explosion-Force wäre vielleicht passender.
                     if (health == 0 && other.gameObject.GetComponent<Player>() != null)
                     {
                         StartCoroutine(PlayerWon(other.gameObject.GetComponent<Player>().playerName));

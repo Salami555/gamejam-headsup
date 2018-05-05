@@ -54,6 +54,7 @@ namespace Entities
 		{
 			if (other.gameObject.CompareTag("Wall"))
 			{
+				Camera.main.GetComponent<ScreenShake>().MakeUndirectedShake(0.2f, 0.2f);
                 if (other.contacts.Length > 0)
                 {
                     var contactNormal = other.contacts[0].normal;

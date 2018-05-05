@@ -243,7 +243,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.4
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 9e92414ec381a44358b355c8888015ed, type: 2}
@@ -302,14 +302,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd719a242f084959b7a25d3742186584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LocalGravity: {x: 0, y: -40}
+  LocalGravity: {x: 0, y: -8}
   ground_hit_effect: {fileID: 1654130628864322, guid: 4f1e1fda1e38b4fc99873fa59a408d42,
     type: 2}
   MovementSpeed: 7.5
-  JumpHeight: 4
+  JumpHeight: 20
   AerialSpeedFactor: 1
   AerialAcceleration: 0.5
-  RotateTimeout: 0.5
+  RotateTimeout: 0.1
   health: 3
   _grounded: 0
 --- !u!114 &114242641799541324

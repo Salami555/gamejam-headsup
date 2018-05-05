@@ -99,7 +99,11 @@ namespace Entities
         private void Update()
         {
             _rotateTimeout -= Time.deltaTime;
-            shieldTime = Math.Max(0, shieldTime - Time.deltaTime);
+            shieldTime -= Time.deltaTime;
+            if (shieldTime < 0)
+            {
+                transform.Find("cage").gameObject.SetActive(false);
+            }
             
             if (_rotateTimeout < 0)
             {
@@ -141,10 +145,6 @@ namespace Entities
                     Vector2 collision_pos =contacts[0].point;
                     Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(collision_pos, 0.6f);
                     Instantiate(hit_explosion, collision_pos, transform.rotation);
-                    if (shieldTime>0)
-                    {
-                        health++;
-                    }
                     health--;
                     Debug.Log(health);
                     if (health == 0 && otherPlayer != null)
@@ -169,6 +169,7 @@ namespace Entities
         public void ActivateShield(float time)
         {
             shieldTime = time;
+            transform.Find("cage").gameObject.SetActive(true);
         }
         
         private void OnCollisionStay2D(Collision2D other)

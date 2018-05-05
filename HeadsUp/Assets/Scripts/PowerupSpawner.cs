@@ -36,7 +36,7 @@ public class PowerupSpawner : MonoBehaviour
 	
 	private void SpawnNew(GameObject spawnee)
 	{	
-		var spawnPos = new Vector3(Random.Range(-5,5), Random.Range(-5,5), 0);
+		var spawnPos = new Vector3(Random.Range(-15,15), Random.Range(-8,8), 0);
 		Instantiate(spawnee, spawnPos, spawnee.GetComponent<Transform>().rotation);
 	}
 }

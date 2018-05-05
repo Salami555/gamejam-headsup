@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LocalGravity: {x: 0, y: 0}
   ground_hit_effect: {fileID: 0}
-  ShieldTime: 50
+  ShieldTime: 17
 --- !u!114 &114720188517013676
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,42 +4,42 @@ timeCreated: 1525445904
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: player
+    21300000: player_body
     21300002: propeller1
     21300004: player2
     21300006: propeller3
     21300008: entities_4
-    21300010: entities_5
+    21300010: thruster_fuel_pipe
     21300012: entities_6
     21300014: entities_7
     21300016: entities_8
     21300018: entities_9
     21300020: entities_10
     21300022: entities_11
-    21300024: entities_12
-    21300026: entities_13
+    21300024: thruster_main
+    21300026: thruster_pipes
     21300028: entities_14
     21300030: entities_15
     21300032: flames_full_1
     21300034: entities_17
     21300036: entities_18
-    21300038: entities_19
-    21300040: entities_20
-    21300042: entities_21
+    21300038: flames_full_3
+    21300040: thruster_preheater
+    21300042: life_green
     21300044: entities_22
     21300046: entities_23
     21300048: flames_idle_0
     21300050: entities_25
     21300052: entities_26
-    21300054: entities_27
+    21300054: flames_idle_3
     21300056: entities_28
     21300058: entities_29
     21300060: entities_30
     21300062: entities_31
-    21300064: entities_32
-    21300066: entities_33
-    21300068: entities_34
-    21300070: entities_35
+    21300064: player_head_0
+    21300066: player_head_1
+    21300068: player_head_2
+    21300070: player_head_3
     21300072: entities_36
     21300074: entities_37
     21300076: entities_38
@@ -68,7 +68,7 @@ TextureImporter:
     21300122: entities_61
     21300124: entities_62
     21300126: entities_63
-    21300128: life
+    21300128: life_red
     21300130: propeller0
     21300132: propeller2
     21300134: flames_full_0
@@ -162,13 +162,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player
+      name: player_body
       rect:
         serializedVersion: 2
-        x: 0
-        y: 208
-        width: 48
-        height: 48
+        x: 70
+        y: 237
+        width: 33
+        height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,43 +176,15 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: player2
+      name: thruster_fuel_pipe
       rect:
         serializedVersion: 2
-        x: 48
-        y: 208
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: entities_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: entities_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 224
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 118
+        y: 244
+        width: 17
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -246,29 +218,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: entities_12
+      name: thruster_main
       rect:
         serializedVersion: 2
-        x: 128
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 103
+        y: 237
+        width: 15
+        height: 19
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: entities_13
+      name: thruster_pipes
       rect:
         serializedVersion: 2
-        x: 160
-        y: 192
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 135
+        y: 244
+        width: 15
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -305,9 +277,9 @@ TextureImporter:
       name: flames_full_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 160
-        width: 18
+        x: 20
+        y: 192
+        width: 20
         height: 32
       alignment: 9
       pivot: {x: 0.5, y: 1}
@@ -316,41 +288,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: entities_19
+      name: flames_full_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 160
-        width: 32
+        x: 60
+        y: 192
+        width: 20
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: entities_20
+      name: thruster_preheater
       rect:
         serializedVersion: 2
-        x: 128
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 118
+        y: 238
+        width: 11
+        height: 6
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: entities_21
+      name: life_green
       rect:
         serializedVersion: 2
-        x: 160
-        y: 160
-        width: 32
-        height: 32
+        x: 77
+        y: 225
+        width: 7
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,9 +361,9 @@ TextureImporter:
       name: flames_idle_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 144
-        width: 18
+        x: 0
+        y: 176
+        width: 20
         height: 16
       alignment: 9
       pivot: {x: 0.5, y: 1}
@@ -400,15 +372,15 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: entities_27
+      name: flames_idle_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 60
+        y: 176
+        width: 20
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -470,13 +442,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: entities_32
+      name: player_head_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 32
-        height: 32
+        y: 240
+        width: 35
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -484,13 +456,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: entities_33
+      name: player_head_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
+        x: 35
+        y: 240
+        width: 35
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -498,13 +470,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: entities_34
+      name: player_head_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
+        x: 0
+        y: 224
+        width: 35
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -512,13 +484,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: entities_35
+      name: player_head_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
+        x: 35
+        y: 224
+        width: 35
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -918,11 +890,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: life
+      name: life_red
       rect:
         serializedVersion: 2
-        x: 0
-        y: 202
+        x: 70
+        y: 225
         width: 7
         height: 6
       alignment: 0
@@ -935,8 +907,8 @@ TextureImporter:
       name: propeller0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 202
+        x: 70
+        y: 231
         width: 6
         height: 6
       alignment: 0
@@ -949,8 +921,8 @@ TextureImporter:
       name: propeller1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 202
+        x: 76
+        y: 231
         width: 6
         height: 6
       alignment: 0
@@ -963,8 +935,8 @@ TextureImporter:
       name: propeller2
       rect:
         serializedVersion: 2
-        x: 24
-        y: 202
+        x: 82
+        y: 231
         width: 6
         height: 6
       alignment: 0
@@ -977,8 +949,8 @@ TextureImporter:
       name: propeller3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 202
+        x: 88
+        y: 231
         width: 6
         height: 6
       alignment: 0
@@ -991,9 +963,9 @@ TextureImporter:
       name: flames_full_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 160
-        width: 18
+        x: 0
+        y: 192
+        width: 20
         height: 32
       alignment: 9
       pivot: {x: 0.5, y: 1}
@@ -1005,9 +977,9 @@ TextureImporter:
       name: flames_full_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 160
-        width: 18
+        x: 40
+        y: 192
+        width: 20
         height: 32
       alignment: 9
       pivot: {x: 0.5, y: 1}
@@ -1019,9 +991,9 @@ TextureImporter:
       name: flames_idle_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 144
-        width: 18
+        x: 20
+        y: 176
+        width: 20
         height: 16
       alignment: 9
       pivot: {x: 0.5, y: 1}
@@ -1033,9 +1005,9 @@ TextureImporter:
       name: flames_idle_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 144
-        width: 18
+        x: 40
+        y: 176
+        width: 20
         height: 16
       alignment: 9
       pivot: {x: 0.5, y: 1}

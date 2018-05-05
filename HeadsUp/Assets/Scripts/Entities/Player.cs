@@ -63,8 +63,7 @@ namespace Entities
 
 		private float shieldTime;
 
-		private float hit_knockback = 10;
-		private float hit_threshhold = 1;//im Bereich bis ca 14 würde man beim gegen die Wand springen schaden nehmen.
+		private float hit_threshhold = 18; //im Bereich bis ca 14 würde man beim gegen die Wand springen schaden nehmen.
 
 		private bool jump;
 		private float _rotateTimeout = 0;
@@ -144,11 +143,15 @@ namespace Entities
 			{
 				if (other.relativeVelocity.magnitude > hit_threshhold || other.gameObject.CompareTag("Player"))
 				{
-					var otherPlayer = other.gameObject.GetComponent<Player>();
-					Vector2 maxVelocity = otherPlayer._rigidbody.velocity.sqrMagnitude > _rigidbody.velocity.sqrMagnitude
-						? otherPlayer._rigidbody.velocity
-						: _rigidbody.velocity;
-					Camera.main.GetComponent<ScreenShake>().MakeDirectedShake(0.9f, 0.4f, maxVelocity.normalized);
+                    // Code für wenn man nur durch andere Spieler schaden 
+                    /*
+                    var otherPlayer = other.gameObject.GetComponent<Player>();
+                    Vector2 maxVelocity = otherPlayer._rigidbody.velocity.sqrMagnitude > _rigidbody.velocity.sqrMagnitude
+                        ? otherPlayer._rigidbody.velocity
+                        : _rigidbody.velocity;
+                    Camera.main.GetComponent<ScreenShake>().MakeDirectedShake(0.9f, 0.4f, maxVelocity.normalized);
+                    */
+                    Camera.main.GetComponent<ScreenShake>().MakeUndirectedShake(0.9f, 0.4f);
 					ContactPoint2D[] contacts = new ContactPoint2D[1];
 					other.GetContacts(contacts);
 					Vector2 collision_pos = contacts[0].point;
@@ -156,7 +159,7 @@ namespace Entities
 					Instantiate(hit_explosion, collision_pos, transform.rotation);
 					DecreaseHealth();
 					Debug.Log(health);
-					if (health == 0 && otherPlayer != null)
+					if (health == 0/* && otherPlayer != null*/)
 					{
 						transform.parent.GetComponent<WinManager>().CheckLives();
 					}

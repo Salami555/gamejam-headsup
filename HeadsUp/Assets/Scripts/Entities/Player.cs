@@ -257,9 +257,13 @@ namespace Entities
 		public void ReduceSpeed(float slowTime)
 		{
 			slowedTime = slowTime;
+			if (slowed)
+			{
+				return;
+			}
+			slowed = true;
 			VerticalThrust /= 2;
 			HalfThrust /= 2;
-			slowed = true;
 		}
 	}
 }

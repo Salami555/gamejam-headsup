@@ -31,6 +31,11 @@ public class PlayerSounds : MonoBehaviour
         outputLouder.PlayOneShot(playerDie);
     }
 
+    public void playPowerupSound()
+    {
+        outputLouder.PlayOneShot(colectPowerup);
+    }
+
     private void Update()
     {
         if (currentThrust != player.Thrust)

@@ -21,7 +21,7 @@ namespace Entities
 
         private bool jump;
         private float _rotateTimeout = 0;
-        private bool _grounded = false;
+        public bool _grounded = false;
         
         protected override void Start()
         {

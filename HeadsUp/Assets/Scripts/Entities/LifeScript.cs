@@ -8,10 +8,22 @@ public class LifeScript : MonoBehaviour
 
 	public int minHealth;
 	public Player player;
-	
-	// Update is called once per frame
-	void Update ()
+
+	public Sprite deadSprite;
+
+	public bool showsHealth
 	{
-		GetComponent<SpriteRenderer>().enabled = player.health >= minHealth;
+		get
+		{
+			return player.health >= minHealth;
+		}
+	}
+
+	// Update is called once per frame
+	void Update()
+	{
+		// GetComponent<SpriteRenderer>().enabled = showsHealth;
+		if (!showsHealth)
+			GetComponent<SpriteRenderer>().sprite = deadSprite;
 	}
 }

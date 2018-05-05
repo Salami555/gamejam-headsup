@@ -46,7 +46,10 @@ namespace Entities
 
 		protected virtual void FixedUpdate()
 		{
-			transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.down, LocalGravity));
+            if (CompareTag("Player"))
+            {
+                transform.rotation = Quaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.down, LocalGravity));
+            }
 			_rigidbody.AddForce(LocalGravity, ForceMode2D.Force);
 		}
 

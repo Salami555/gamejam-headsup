@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PowerupSpawner : MonoBehaviour
 {
@@ -25,15 +27,15 @@ public class PowerupSpawner : MonoBehaviour
 			var powerupCount = GameObject.FindGameObjectsWithTag("Powerup").Length;
 			if (powerupCount < 3)
 			{
-				var spawnee = Containers[Random.Range(0, Containers.Length - 1)];
+				int random = Random.Range(0, Containers.Length);
+				var spawnee = Containers[random];
 				SpawnNew(spawnee);
 			}
 		}
 	}
 	
 	private void SpawnNew(GameObject spawnee)
-	{
-		
+	{	
 		var spawnPos = new Vector3(Random.Range(-5,5), Random.Range(-5,5), 0);
 		Instantiate(spawnee, spawnPos, spawnee.GetComponent<Transform>().rotation);
 	}

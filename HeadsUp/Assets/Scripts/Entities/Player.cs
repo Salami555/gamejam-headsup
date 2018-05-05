@@ -131,7 +131,11 @@ namespace Entities
             {
                 if (other.relativeVelocity.magnitude > hit_threshhold || other.gameObject.CompareTag("Player"))
                 {
-                    Camera.main.GetComponent<ScreenShake>().MakeUndirectedShake(0.5f, 0.4f);
+                    var otherPlayer = other.gameObject.GetComponent<Player>();
+                    Vector2 maxVelocity = otherPlayer._rigidbody.velocity.sqrMagnitude > _rigidbody.velocity.sqrMagnitude
+                        ? otherPlayer._rigidbody.velocity
+                        : _rigidbody.velocity;
+                    Camera.main.GetComponent<ScreenShake>().MakeDirectedShake(0.9f, 0.4f, maxVelocity.normalized);
                     ContactPoint2D[] contacts = new ContactPoint2D[1];
                     other.GetContacts(contacts);
                     Vector2 collision_pos =contacts[0].point;
@@ -139,9 +143,9 @@ namespace Entities
                     Instantiate(hit_explosion, collision_pos, transform.rotation);
                     health--;
                     Debug.Log(health);
-                    if (health == 0 && other.gameObject.GetComponent<Player>() != null)
+                    if (health == 0 && otherPlayer != null)
                     {
-                        StartCoroutine(PlayerWon(other.gameObject.GetComponent<Player>().playerName));
+                        StartCoroutine(PlayerWon(otherPlayer.playerName));
                     }
                 }
             }

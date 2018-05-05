@@ -33,7 +33,7 @@ TextureImporter:
     21300052: entities_26
     21300054: flames_idle_3
     21300056: cage
-    21300058: entities_29
+    21300058: life_gray
     21300060: entities_30
     21300062: entities_31
     21300064: player_head_0
@@ -402,13 +402,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: entities_29
+      name: life_gray
       rect:
         serializedVersion: 2
-        x: 160
-        y: 128
-        width: 32
-        height: 32
+        x: 84
+        y: 225
+        width: 7
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

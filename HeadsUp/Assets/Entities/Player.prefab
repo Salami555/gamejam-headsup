@@ -364,7 +364,7 @@ MonoBehaviour:
   RotateTimeout: 0.1
   hit_explosion: {fileID: 1285367049366870, guid: b30c05b8309b6d34f94d9c1af0563649,
     type: 2}
-  playerName: 
+  playerName: Red
   winText: {fileID: 0}
   health: 3
   _grounded: 0
@@ -392,9 +392,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8353ef9f65fed2f44a4b9710976eca40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FullFlameSprite: {fileID: 21300032, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
-  HalfFlameSprite: {fileID: 21300048, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
-  Player: {fileID: 114012752762163260}
+  FullFlameSprites:
+  - {fileID: 21300134, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  - {fileID: 21300032, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  - {fileID: 21300136, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  HalfFlameSprites:
+  - {fileID: 21300048, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  - {fileID: 21300138, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  - {fileID: 21300140, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
 --- !u!114 &114390223494613938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -406,9 +411,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8353ef9f65fed2f44a4b9710976eca40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FullFlameSprite: {fileID: 21300032, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
-  HalfFlameSprite: {fileID: 21300048, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
-  Player: {fileID: 114012752762163260}
+  FullFlameSprites:
+  - {fileID: 21300134, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  - {fileID: 21300032, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  - {fileID: 21300136, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  HalfFlameSprites:
+  - {fileID: 21300048, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  - {fileID: 21300138, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  - {fileID: 21300140, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
 --- !u!114 &114435792521273928
 MonoBehaviour:
   m_ObjectHideFlags: 1

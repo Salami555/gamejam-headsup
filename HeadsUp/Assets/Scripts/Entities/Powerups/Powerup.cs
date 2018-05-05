@@ -7,7 +7,7 @@ namespace Entities
 {
     public class Powerup : Entity
     {
-        private CircleCollider2D _circ_col;
+        protected CircleCollider2D _circ_col;
                 
         protected override void Start()
         {
@@ -23,10 +23,14 @@ namespace Entities
             base.OnCollisionEnter2D(other);
             if (other.gameObject.CompareTag ("Player")) {
                 other.gameObject.GetComponent<Player> ().Collect (this);
-                Debug.Log("Powerup got");
                 Destroy(gameObject);
                 Destroy(this);
             }
+        }
+
+        public virtual void ApplyEffect(Player player)
+        {
+            Debug.Log("Powerup got");
         }
     }
 }

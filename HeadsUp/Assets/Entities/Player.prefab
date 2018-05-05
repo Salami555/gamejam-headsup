@@ -1048,6 +1048,7 @@ MonoBehaviour:
   RotateTimeout: 0.1
   hit_explosion: {fileID: 1285367049366870, guid: b30c05b8309b6d34f94d9c1af0563649,
     type: 2}
+  turnEffect: {fileID: 1865684551771342, guid: cb297d7b7c137594db5448920cca15c3, type: 2}
   playerName: Red
   winText: {fileID: 0}
   health: 3

@@ -52,8 +52,7 @@ namespace Entities
         public int health;
         private float shieldTime;
         
-        private float hit_knockback = 10;
-        private float hit_threshhold = 1;//im Bereich bis ca 14 würde man beim gegen die Wand springen schaden nehmen.
+        private float hit_threshhold = 18;//im Bereich bis ca 14 würde man beim gegen die Wand springen schaden nehmen.
 
         private bool jump;
         private float _rotateTimeout = 0;

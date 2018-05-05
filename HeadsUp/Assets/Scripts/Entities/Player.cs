@@ -246,9 +246,10 @@ namespace Entities
 			for (int playerNumber = 0; playerNumber < players.Length; playerNumber++)
 			{
 				var currentPlayer = players[playerNumber]; 
-				if (currentPlayer != this)
+				if (currentPlayer != gameObject)
 				{
-					currentPlayer.GetComponent<Player>().ReduceSpeed(slowTime);
+					var component = currentPlayer.GetComponent<Player>();
+					if (component != null) component.ReduceSpeed(slowTime);
 				}
 			}
 		}

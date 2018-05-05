@@ -171,11 +171,6 @@ namespace Entities
 					Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(collision_pos, 0.6f);
 					Instantiate(hit_explosion, collision_pos, transform.rotation);
 					DecreaseHealth();
-					Debug.Log(health);
-					if (health == 0/* && otherPlayer != null*/)
-					{
-						transform.parent.GetComponent<WinManager>().CheckLives();
-					}
 				}
 			}
 		}
@@ -191,6 +186,9 @@ namespace Entities
 			_circ_col.enabled = false;
 			AliveBoxCollider.enabled = false;
 			DeadBoxCollider.enabled = true;
+
+            // check win condition
+			transform.parent.GetComponent<WinManager>().CheckLives();
 		}
 
 		public void Collect(Powerup item)

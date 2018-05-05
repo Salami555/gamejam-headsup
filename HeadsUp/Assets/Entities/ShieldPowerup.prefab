@@ -21,8 +21,6 @@ GameObject:
   - component: {fileID: 4558132335002378}
   - component: {fileID: 212256306401377194}
   - component: {fileID: 61595102736074182}
-  - component: {fileID: 114443809649395910}
-  - component: {fileID: 114720188517013676}
   - component: {fileID: 114476902874604338}
   - component: {fileID: 50544517408296812}
   m_Layer: 0
@@ -90,19 +88,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6826105, y: 0.66255283}
   m_EdgeRadius: 0
---- !u!114 &114443809649395910
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1584511511473678}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4867e6c131bf84ac691eb020d9b98c14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LocalGravity: {x: 0, y: 0}
-  ground_hit_effect: {fileID: 0}
 --- !u!114 &114476902874604338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,20 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LocalGravity: {x: 0, y: 0}
   ground_hit_effect: {fileID: 0}
-  ShieldTime: 17
---- !u!114 &114720188517013676
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1584511511473678}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d0d367745854bdcbd91c6931306d288, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LocalGravity: {x: 0, y: 0}
-  ground_hit_effect: {fileID: 0}
+  ShieldTime: 10
 --- !u!212 &212256306401377194
 SpriteRenderer:
   m_ObjectHideFlags: 1

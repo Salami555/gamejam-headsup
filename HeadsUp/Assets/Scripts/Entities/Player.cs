@@ -29,7 +29,6 @@ namespace Entities
 					return ThrustState.HALF;
 				}
 				else
-
 				{
 					return ThrustState.ZERO;
 				}
@@ -39,6 +38,9 @@ namespace Entities
 		public float VerticalThrust;
 		public float HalfThrust;
 		public float HorizontalThrust;
+
+		private bool slowed = false;
+		private float slowedTime;
 
 		public float RotateTimeout;
 
@@ -136,6 +138,11 @@ namespace Entities
 			{
 				UpdatePowerUps();
 				ControlRotation();
+				slowedTime -= Time.deltaTime;
+				if (slowed && slowedTime < 0)
+				{
+					slowed = false;
+				}
 			}
 		}
 
@@ -178,11 +185,19 @@ namespace Entities
 		public void DecreaseHealth()
 		{
 			health--;
-			if (!alive) Kill();
+			if (!alive)
+			{
+				Kill();
+			}
+			else
+			{
+				GetComponent<PlayerSounds>().playHitSound();
+			}
 		}
 
 		public void Kill()
 		{
+			GetComponent<PlayerSounds>().playDieSound();
 			_circ_col.enabled = false;
 			AliveBoxCollider.enabled = false;
 			DeadBoxCollider.enabled = true;
@@ -222,6 +237,25 @@ namespace Entities
 			}
 		}
 
+		public void SlowDown(float slowTime)
+		{
+			var players = GameObject.FindGameObjectsWithTag("Player");
+			for (int playerNumber = 0; playerNumber < players.Length; playerNumber++)
+			{
+				var currentPlayer = players[playerNumber]; 
+				if (currentPlayer != this)
+				{
+					currentPlayer.GetComponent<Player>().ReduceSpeed(slowTime);
+				}
+			}
+		}
 
+		public void ReduceSpeed(float slowTime)
+		{
+			slowedTime = slowTime;
+			VerticalThrust /= 2;
+			HalfThrust /= 2;
+			slowed = true;
+		}
 	}
 }

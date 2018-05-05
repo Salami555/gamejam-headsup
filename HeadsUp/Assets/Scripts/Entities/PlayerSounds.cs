@@ -1,14 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using Entities;
 
 public class PlayerSounds : MonoBehaviour
 {
     public AudioSource output;
+    public AudioSource outputLouder;
     public AudioClip thrustingIgnite;
     public AudioClip thrustingLooping;
     public AudioClip playerHit;
     public AudioClip playerDie;
+    public AudioClip colectPowerup;
 
     private Player.ThrustState? currentThrust = null;
     private Player player;
@@ -16,6 +19,16 @@ public class PlayerSounds : MonoBehaviour
     private void Awake()
     {
         player = GetComponent<Player>();
+    }
+
+    public void playHitSound()
+    {
+        outputLouder.PlayOneShot(playerHit);
+    }
+
+    public void playDieSound()
+    {
+        outputLouder.PlayOneShot(playerDie);
     }
 
     private void Update()

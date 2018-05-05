@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61222839970424736}
   m_Layer: 0
   m_Name: Flame
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 1}
-    oldSize: {x: 0.75, y: 0.6666667}
+    oldSize: {x: 0.8333333, y: 0.6666667}
     newSize: {x: 0.75, y: 1.3333334}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -78,9 +78,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8353ef9f65fed2f44a4b9710976eca40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FullFlameSprite: {fileID: 21300032, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
-  HalfFlameSprite: {fileID: 21300048, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
-  player: {fileID: 0}
+  FullFlameSprites: []
+  HalfFlameSprites: []
+  chemtrails: {fileID: 0}
 --- !u!212 &212869763139829646
 SpriteRenderer:
   m_ObjectHideFlags: 1

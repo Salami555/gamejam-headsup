@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 487230585}
   - component: {fileID: 487230584}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: StarSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,7 +291,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -706749070
+  randomSeed: -1807789158
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3709,7 +3709,7 @@ GameObject:
   - component: {fileID: 839501920}
   - component: {fileID: 839501919}
   m_Layer: 0
-  m_Name: space-bg
+  m_Name: BackgroundGraphic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5859,6 +5859,11 @@ Prefab:
       propertyPath: playerName
       value: Green
       objectReference: {fileID: 0}
+    - target: {fileID: 114572940969030924, guid: 0b33c5778c83e4170a16fe5804f01b62,
+        type: 2}
+      propertyPath: winText
+      value: 
+      objectReference: {fileID: 999120401}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b33c5778c83e4170a16fe5804f01b62, type: 2}
   m_IsPrefabParent: 0
@@ -6073,6 +6078,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114572940969030924, guid: 0b33c5778c83e4170a16fe5804f01b62,
+        type: 2}
+      propertyPath: winText
+      value: 
+      objectReference: {fileID: 999120401}
     - target: {fileID: 1813971970594222, guid: 0b33c5778c83e4170a16fe5804f01b62, type: 2}
       propertyPath: m_Name
       value: PlayerRed

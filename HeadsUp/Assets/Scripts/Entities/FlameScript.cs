@@ -5,26 +5,26 @@ using UnityEngine;
 
 public class FlameScript : MonoBehaviour
 {
-
 	public Sprite FullFlameSprite;
 	public Sprite HalfFlameSprite;
 
-	public Player player;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+	public Player Player;
 	
 	// Update is called once per frame
 	void Update () {
-		if (player._grounded)
+		switch (Player.Thrust)
 		{
-			GetComponent<SpriteRenderer>().sprite = HalfFlameSprite;
-		}
-		else
-		{
-			GetComponent<SpriteRenderer>().sprite = FullFlameSprite;
+				case Player.ThrustState.FULL:
+					GetComponent<SpriteRenderer>().sprite = FullFlameSprite;
+					GetComponent<SpriteRenderer>().color = Color.white;
+					break;
+				case Player.ThrustState.HALF:
+					GetComponent<SpriteRenderer>().sprite = HalfFlameSprite;
+					GetComponent<SpriteRenderer>().color = Color.white;
+					break;
+				case Player.ThrustState.ZERO:
+					GetComponent<SpriteRenderer>().color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+					break;
 		}
 	}
 

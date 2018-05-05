@@ -5,26 +5,36 @@ using UnityEngine;
 
 public class FlameScript : MonoBehaviour
 {
-	public Sprite FullFlameSprite;
-	public Sprite HalfFlameSprite;
+	public Sprite[] FullFlameSprites;
+	public Sprite[] HalfFlameSprites;
 
 	private Player Player;
 
+	private float timeSinceLastFlameChange;
+	private int currentFrame;
+	
 	private void Start()
 	{
 		Player = transform.parent.gameObject.GetComponent<Player>();
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
+		timeSinceLastFlameChange += Time.deltaTime;
+		if (timeSinceLastFlameChange >= 0.05)
+		{
+			currentFrame++;
+			timeSinceLastFlameChange = 0;
+		}
 		switch (Player.Thrust)
 		{
 				case Player.ThrustState.FULL:
-					GetComponent<SpriteRenderer>().sprite = FullFlameSprite;
+					GetComponent<SpriteRenderer>().sprite = FullFlameSprites[currentFrame % FullFlameSprites.Length];
 					GetComponent<SpriteRenderer>().color = Color.white;
 					break;
 				case Player.ThrustState.HALF:
-					GetComponent<SpriteRenderer>().sprite = HalfFlameSprite;
+					GetComponent<SpriteRenderer>().sprite = HalfFlameSprites[currentFrame % HalfFlameSprites.Length];
 					GetComponent<SpriteRenderer>().color = Color.white;
 					break;
 				case Player.ThrustState.ZERO:

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Entities
 {
@@ -123,10 +124,9 @@ namespace Entities
                     health--;
                     Debug.Log(health);
                     _rigidbody.AddForce(-transform.up.normalized * hit_knockback, ForceMode2D.Impulse);//Knockback nach "unten", nicht sicher, ob das so gut ist. Eine Explosion-Force wäre vielleicht passender.
-                    if (health <= 0)
+                    if (health == 0 && other.gameObject.GetComponent<Player>() != null)
                     {
-                        winText.text = "Player " + other.gameObject.GetComponent<Player>().playerName + " won!";
-                        winText.enabled = true;
+                        StartCoroutine(PlayerWon(other.gameObject.GetComponent<Player>().playerName));
                     }
                 }
             }
@@ -138,36 +138,18 @@ namespace Entities
             health = Math.Min(health + 1, 3);
         }
 
-
-
-        /*
-        private void ExplosionForce(Vector2 origin, float radius, float strength)
-        {
-            Collider2D[] hits = Physics2D.OverlapCircleAll(origin, radius);
-            List<GameObject> already_hit = new List<GameObject>();//Some Objects have multiple Colliders, so we keep track of the ones, that were already hit
-            foreach (Collider2D hit in hits)
-            {
-                Rigidbody2D _rigid_hit = hit.GetComponent<Rigidbody2D>();
-                if (_rigid_hit != null && !already_hit.Contains(_rigid_hit.gameObject))
-                {
-                    already_hit.Add(_rigid_hit.gameObject);
-                    if (_rigid_hit.bodyType != RigidbodyType2D.Static)
-                    {
-                        float force = Mathf.Clamp((radius - (origin - (Vector2)_rigid_hit.transform.position).magnitude) * 2, 0, strength);
-                        Vector2 force_vec = ((Vector2)_rigid_hit.transform.position - origin).normalized * force;
-                        print(force_vec);
-                        _rigid_hit.AddForce(force_vec, ForceMode2D.Impulse);
-                    }
-                }
-            }
-        }
-        */
-
-
         private void OnCollisionStay2D(Collision2D other)
         {
             _grounded = true;
+        }
 
+        private IEnumerator PlayerWon(string winnerName)
+        {
+            winText.text = "Player " + winnerName + " won!";
+            winText.enabled = true;
+            InputController.Reset();
+            yield return new WaitForSeconds(3.0f);
+            SceneManager.LoadScene(0);
         }
     }
 }

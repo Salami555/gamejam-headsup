@@ -20,7 +20,7 @@ TextureImporter:
     21300026: entities_13
     21300028: entities_14
     21300030: entities_15
-    21300032: flames_full
+    21300032: flames_full_1
     21300034: entities_17
     21300036: entities_18
     21300038: entities_19
@@ -28,7 +28,7 @@ TextureImporter:
     21300042: entities_21
     21300044: entities_22
     21300046: entities_23
-    21300048: flames_idle
+    21300048: flames_idle_0
     21300050: entities_25
     21300052: entities_26
     21300054: entities_27
@@ -71,6 +71,10 @@ TextureImporter:
     21300128: life
     21300130: propeller0
     21300132: propeller2
+    21300134: flames_full_0
+    21300136: flames_full_2
+    21300138: flames_idle_1
+    21300140: flames_idle_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -298,43 +302,15 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: flames_full
+      name: flames_full_1
       rect:
         serializedVersion: 2
-        x: 8
+        x: 40
         y: 160
         width: 18
         height: 32
       alignment: 9
       pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: entities_17
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: entities_18
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 160
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -410,7 +386,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: flames_idle
+      name: flames_idle_0
       rect:
         serializedVersion: 2
         x: 8
@@ -419,34 +395,6 @@ TextureImporter:
         height: 16
       alignment: 9
       pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: entities_25
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: entities_26
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1035,6 +983,62 @@ TextureImporter:
         height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flames_full_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 160
+        width: 18
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flames_full_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 160
+        width: 18
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flames_idle_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 144
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: flames_idle_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 144
+        width: 18
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

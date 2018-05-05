@@ -394,7 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FullFlameSprite: {fileID: 21300032, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   HalfFlameSprite: {fileID: 21300048, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
-  player: {fileID: 114012752762163260}
+  Player: {fileID: 114012752762163260}
 --- !u!114 &114390223494613938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FullFlameSprite: {fileID: 21300032, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   HalfFlameSprite: {fileID: 21300048, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
-  player: {fileID: 114012752762163260}
+  Player: {fileID: 114012752762163260}
 --- !u!114 &114435792521273928
 MonoBehaviour:
   m_ObjectHideFlags: 1

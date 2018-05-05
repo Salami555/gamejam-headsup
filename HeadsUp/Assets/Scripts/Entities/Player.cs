@@ -89,7 +89,11 @@ namespace Entities
 		protected override void FixedUpdate()
 		{
 			base.FixedUpdate();
+			ControlThrust();
+		}
 
+		private void ControlThrust()
+		{
 			switch (Thrust)
 			{
 				case ThrustState.FULL:
@@ -101,17 +105,11 @@ namespace Entities
 			}
 
 			_framesSinceGrounded++;
-
 		}
 
-		private void Update()
+		private void ControlRotation()
 		{
 			_rotateTimeout -= Time.deltaTime;
-			shieldTime -= Time.deltaTime;
-			if (shieldTime < 0)
-			{
-				transform.Find("cage").gameObject.SetActive(false);
-			}
 
 			if (_rotateTimeout < 0)
 			{
@@ -130,9 +128,24 @@ namespace Entities
 					_rotateTimeout = RotateTimeout;
 				}
 			}
+		}
 
+		private void Update()
+		{
+			if (alive)
+			{
+				UpdatePowerUps();
+				ControlRotation();
+			}
+		}
 
-			//jump |= input.Jump;
+		private void UpdatePowerUps()
+		{
+			shieldTime -= Time.deltaTime;
+			if (shieldTime < 0)
+			{
+				transform.Find("cage").gameObject.SetActive(false);
+			}
 		}
 
 		protected override void OnCollisionEnter2D(Collision2D other)
@@ -143,15 +156,15 @@ namespace Entities
 			{
 				if (other.relativeVelocity.magnitude > hit_threshhold || other.gameObject.CompareTag("Player"))
 				{
-                    // Code für wenn man nur durch andere Spieler schaden 
-                    /*
+					// Code für wenn man nur durch andere Spieler schaden 
+					/*
                     var otherPlayer = other.gameObject.GetComponent<Player>();
                     Vector2 maxVelocity = otherPlayer._rigidbody.velocity.sqrMagnitude > _rigidbody.velocity.sqrMagnitude
                         ? otherPlayer._rigidbody.velocity
                         : _rigidbody.velocity;
                     Camera.main.GetComponent<ScreenShake>().MakeDirectedShake(0.9f, 0.4f, maxVelocity.normalized);
                     */
-                    Camera.main.GetComponent<ScreenShake>().MakeUndirectedShake(0.9f, 0.4f);
+					Camera.main.GetComponent<ScreenShake>().MakeUndirectedShake(0.9f, 0.4f);
 					ContactPoint2D[] contacts = new ContactPoint2D[1];
 					other.GetContacts(contacts);
 					Vector2 collision_pos = contacts[0].point;

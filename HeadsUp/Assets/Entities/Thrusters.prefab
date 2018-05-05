@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 4478498542931672}
   m_Layer: 0
   m_Name: Thrusters
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -548,6 +548,7 @@ MonoBehaviour:
   - {fileID: 21300138, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   - {fileID: 21300140, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   - {fileID: 21300140, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  chemtrails: {fileID: 0}
 --- !u!114 &114577211415622598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -580,6 +581,7 @@ MonoBehaviour:
   - {fileID: 21300138, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   - {fileID: 21300140, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   - {fileID: 21300054, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  chemtrails: {fileID: 0}
 --- !u!114 &114704858412738276
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5839,6 +5839,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114012752762163260, guid: 0b33c5778c83e4170a16fe5804f01b62,
+        type: 2}
+      propertyPath: playerName
+      value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 114012752762163260, guid: 0b33c5778c83e4170a16fe5804f01b62,
+        type: 2}
+      propertyPath: winText
+      value: 
+      objectReference: {fileID: 999120401}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b33c5778c83e4170a16fe5804f01b62, type: 2}
   m_IsPrefabParent: 0
@@ -6058,6 +6068,16 @@ Prefab:
       value: 
       objectReference: {fileID: 21300004, guid: 5c7e1577ecda9604fb0024d60321fe08,
         type: 3}
+    - target: {fileID: 114012752762163260, guid: 0b33c5778c83e4170a16fe5804f01b62,
+        type: 2}
+      propertyPath: playerName
+      value: Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 114012752762163260, guid: 0b33c5778c83e4170a16fe5804f01b62,
+        type: 2}
+      propertyPath: winText
+      value: 
+      objectReference: {fileID: 999120401}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b33c5778c83e4170a16fe5804f01b62, type: 2}
   m_IsPrefabParent: 0

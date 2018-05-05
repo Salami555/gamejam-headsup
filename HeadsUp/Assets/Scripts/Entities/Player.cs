@@ -16,7 +16,7 @@ namespace Entities
         public float RotateTimeout;
 
         public string playerName;
-        public GameObject winText;
+        public Text winText;
         
         private InputController input;
 
@@ -102,8 +102,8 @@ namespace Entities
                     _rigidbody.AddForce(-transform.up.normalized * hit_knockback, ForceMode2D.Impulse);//Knockback nach "unten", nicht sicher, ob das so gut ist. Eine Explosion-Force wäre vielleicht passender.
                     if (health <= 0)
                     {
-                        winText.GetComponent<Text>().text = "Player " + playerName + " won!";
-                        winText.SetActive(true);
+                        winText.text = "Player " + other.gameObject.GetComponent<Player>().playerName + " won!";
+                        winText.enabled = true;
                     }
                 }
             }

@@ -135,7 +135,7 @@ namespace Entities
         public void Collect(Powerup item)
         {
             Debug.Log("Player Powerup got");
-            health = Math.Min(health++, 3);
+            health = Math.Min(health + 1, 3);
         }
 
         private void OnCollisionStay2D(Collision2D other)

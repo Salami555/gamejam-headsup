@@ -3916,12 +3916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13248b3b27c3c4c4982cc64ec2a6a385, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &922642613 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114012752762163260, guid: 0b33c5778c83e4170a16fe5804f01b62,
-    type: 2}
-  m_PrefabInternal: {fileID: 1400225598}
-  m_Script: {fileID: 11500000, guid: bd719a242f084959b7a25d3742186584, type: 3}
 --- !u!1 &946969645
 GameObject:
   m_ObjectHideFlags: 0
@@ -5895,24 +5889,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114012752762163260, guid: 0b33c5778c83e4170a16fe5804f01b62,
         type: 2}
-      propertyPath: playerName
-      value: Red
-      objectReference: {fileID: 0}
-    - target: {fileID: 114012752762163260, guid: 0b33c5778c83e4170a16fe5804f01b62,
-        type: 2}
       propertyPath: winText
       value: 
       objectReference: {fileID: 999120401}
-    - target: {fileID: 114390223494613938, guid: 0b33c5778c83e4170a16fe5804f01b62,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 922642613}
-    - target: {fileID: 114252958995326354, guid: 0b33c5778c83e4170a16fe5804f01b62,
-        type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 922642613}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b33c5778c83e4170a16fe5804f01b62, type: 2}
   m_IsPrefabParent: 0

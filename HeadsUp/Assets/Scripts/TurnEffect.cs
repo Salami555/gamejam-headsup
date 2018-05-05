@@ -6,7 +6,7 @@ public class TurnEffect : MonoBehaviour {
 
     public Quaternion toRotate; //hier die Rotation, um die rotiert werden soll
 
-    private float effect_duration = 0.3f; //sollte die Dauer der Particlesystems sein
+    private float effect_duration = 0.25f; //sollte in etwa die Dauer der Particlesystems sein
     //Dazu sollte man die Lebensdauer der Partikel beachten
     
     

@@ -137,6 +137,10 @@ namespace Entities
                     Vector2 collision_pos =contacts[0].point;
                     Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(collision_pos, 0.6f);
                     Instantiate(hit_explosion, collision_pos, transform.rotation);
+                    if (shieldTime>0)
+                    {
+                        health++;
+                    }
                     health--;
                     Debug.Log(health);
                     if (health == 0 && other.gameObject.GetComponent<Player>() != null)

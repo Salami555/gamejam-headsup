@@ -141,6 +141,8 @@ namespace Entities
 				slowedTime -= Time.deltaTime;
 				if (slowed && slowedTime < 0)
 				{
+					HalfThrust *= 2;
+					VerticalThrust *= 2;
 					slowed = false;
 				}
 			}

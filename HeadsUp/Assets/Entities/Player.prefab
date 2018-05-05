@@ -869,7 +869,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f34dabab9457b14a8dfd635ac2dc21e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114372656893756262
+  FullFlameSprites:
+  - {fileID: 21300134, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  - {fileID: 21300032, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  - {fileID: 21300136, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  HalfFlameSprites:
+  - {fileID: 21300048, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  - {fileID: 21300138, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  - {fileID: 21300140, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
+  chemtrails: {fileID: 198121317651790352, guid: 2d5e17682b7e045409e04d28b746245d,
+    type: 2}
+--- !u!114 &114353925922796884
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -902,6 +912,9 @@ MonoBehaviour:
   - {fileID: 21300140, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
   - {fileID: 21300054, guid: 5c7e1577ecda9604fb0024d60321fe08, type: 3}
 --- !u!114 &114425762618053364
+  chemtrails: {fileID: 198121317651790352, guid: 2d5e17682b7e045409e04d28b746245d,
+    type: 2}
+--- !u!114 &114435792521273928
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

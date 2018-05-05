@@ -22,6 +22,7 @@ public class PlayerExplodeScript : MonoBehaviour
 	void Update () {
 		if (_player.health <= 0)
 		{
+			transform.SetParent(null, true);
 			transform.Rotate(0, 0, Time.deltaTime * _randomRotation);
 			transform.Translate(_randomDirection * Time.deltaTime * 5.0f, Space.World);
 		}

@@ -15,6 +15,8 @@ namespace Entities
         public float AerialAcceleration;
         public float RotateTimeout;
 
+        public GameObject hit_explosion;
+
         public string playerName;
         public Text winText;
         
@@ -94,9 +96,11 @@ namespace Entities
             {
                 if (other.relativeVelocity.magnitude > hit_threshhold || other.gameObject.CompareTag("Player"))
                 {
-                    Vector2 head_pos = (Vector2)transform.position + _circ_col.offset;
-                    Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(head_pos, 0.6f);
-                    ExplosionForce(head_pos, 10, 100);
+                    ContactPoint2D[] contacts = new ContactPoint2D[1];
+                    other.GetContacts(contacts);
+                    Vector2 collision_pos =contacts[0].point;
+                    Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(collision_pos, 0.6f);
+                    GameObject this_explosion = Instantiate(hit_explosion, collision_pos, transform.rotation);
                     health--;
                     Debug.Log(health);
                     _rigidbody.AddForce(-transform.up.normalized * hit_knockback, ForceMode2D.Impulse);//Knockback nach "unten", nicht sicher, ob das so gut ist. Eine Explosion-Force wäre vielleicht passender.
@@ -111,7 +115,7 @@ namespace Entities
 
 
 
-
+        /*
         private void ExplosionForce(Vector2 origin, float radius, float strength)
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(origin, radius);
@@ -132,6 +136,8 @@ namespace Entities
                 }
             }
         }
+        */
+
 
         private void OnCollisionStay2D(Collision2D other)
         {

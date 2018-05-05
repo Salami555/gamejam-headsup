@@ -16,7 +16,7 @@ public class WinManager : MonoBehaviour
 
     public void CheckLives()
     {
-        var livingPlayers = players.Where(p => p.health == 0);
+        var livingPlayers = players.Where(p => p.health > 0);
         if (livingPlayers.Count() == 1)
         {
             StartCoroutine(PlayerWon( livingPlayers.First()));

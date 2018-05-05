@@ -20,6 +20,6 @@ public class TurnEffect : MonoBehaviour {
 	}
 	
 	void Update () {
-        //transform.rotation = Quaternion.Lerp(start_rot, , Time.time - creation_time);
+        transform.rotation = Quaternion.Lerp(start_rot, start_rot * toRotate, (Time.time - creation_time)/effect_duration);
 	}
 }

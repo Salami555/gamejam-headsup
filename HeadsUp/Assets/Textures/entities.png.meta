@@ -77,6 +77,7 @@ TextureImporter:
     21300140: flames_idle_2
     21300142: heart_collectable
     21300144: cage_collectable
+    21300146: snailOfGod
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -1037,6 +1038,20 @@ TextureImporter:
         serializedVersion: 2
         x: 130
         y: 202
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: snailOfGod
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 231
         width: 16
         height: 16
       alignment: 0

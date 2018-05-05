@@ -6181,7 +6181,12 @@ Prefab:
     - target: {fileID: 114156914733712900, guid: b8caaf614e9824efd925bddc6c8f0519,
         type: 2}
       propertyPath: maxPowerups
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114156914733712900, guid: b8caaf614e9824efd925bddc6c8f0519,
+        type: 2}
+      propertyPath: spawnTimeout
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8caaf614e9824efd925bddc6c8f0519, type: 2}

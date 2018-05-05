@@ -7,6 +7,8 @@ public class PlayerSounds : MonoBehaviour
     public AudioSource output;
     public AudioClip thrustingIgnite;
     public AudioClip thrustingLooping;
+    public AudioClip playerHit;
+    public AudioClip playerDie;
 
     private Player.ThrustState? currentThrust = null;
     private Player player;

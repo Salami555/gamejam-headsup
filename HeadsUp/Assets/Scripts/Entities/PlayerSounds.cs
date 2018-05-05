@@ -6,6 +6,7 @@ using Entities;
 public class PlayerSounds : MonoBehaviour
 {
     public AudioSource output;
+    public AudioSource outputLouder;
     public AudioClip thrustingIgnite;
     public AudioClip thrustingLooping;
     public AudioClip playerHit;
@@ -22,12 +23,12 @@ public class PlayerSounds : MonoBehaviour
 
     public void playHitSound()
     {
-        output.PlayOneShot(playerHit);
+        outputLouder.PlayOneShot(playerHit);
     }
 
     public void playDieSound()
     {
-        output.PlayOneShot(playerDie);
+        outputLouder.PlayOneShot(playerDie);
     }
 
     private void Update()

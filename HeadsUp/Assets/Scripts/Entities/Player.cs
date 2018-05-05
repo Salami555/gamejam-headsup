@@ -33,11 +33,10 @@ namespace Entities
             }
         }
         
-        public float MovementSpeed;
-        public float JumpHeight;
-
-        public float AerialSpeedFactor;
-        public float AerialAcceleration;
+        public float VerticalThrust;
+        public float HalfThrust;
+        public float HorizontalThrust;
+        
         public float RotateTimeout;
 
         public GameObject hit_explosion;
@@ -67,24 +66,22 @@ namespace Entities
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
-            var movement = HorizontalVector;
-            var targetVelocity = input.Horizontal;
-            var targetHorizontal = movement * targetVelocity;
-            var delta = targetHorizontal - HorizontalMovement;
 
             Debug.DrawLine(transform.position, transform.position + new Vector3(input.Horizontal, input.Vertical, 0));
 
             switch (Thrust)
             {
                 case ThrustState.FULL:
-                    _rigidbody.AddForce(LocalGravity.normalized * -JumpHeight);
+                    _rigidbody.AddForce(LocalGravity.normalized * -VerticalThrust);
                     break;
                 case ThrustState.HALF:
-                    _rigidbody.AddForce(-LocalGravity * 0.8f, ForceMode2D.Force);
+                    _rigidbody.AddForce(LocalGravity.normalized * -HalfThrust, ForceMode2D.Force);
                     break;
             }
             
-            _rigidbody.AddForce(targetHorizontal * AerialAcceleration, ForceMode2D.Force);
+            var movement = HorizontalVector;
+            var targetHorizontal = movement * input.Horizontal;
+            _rigidbody.AddForce(targetHorizontal * HorizontalThrust, ForceMode2D.Force);
 
             _grounded = false;
 

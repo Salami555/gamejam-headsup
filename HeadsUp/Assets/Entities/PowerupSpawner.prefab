@@ -54,4 +54,5 @@ MonoBehaviour:
   Containers:
   - {fileID: 1440697366421438, guid: 185e4ea1021e445e3aa879b7290e478b, type: 2}
   - {fileID: 1584511511473678, guid: 1692ee833b2d5444f9072701417bde58, type: 2}
-  spawnTimeout: 5
+  spawnTimeout: 3
+  maxPowerups: 10

@@ -57,6 +57,7 @@ public class ScreenShake : MonoBehaviour
 
 	public void MakeDirectedShake(float intensity, float duration, Vector2 direction)
 	{
+		if (shakeIntensity > intensity && timeShaking < shakeDuration) return;
 		shakeIntensity = intensity;
 		shakeDuration = duration;
 		shakeDirection = direction;

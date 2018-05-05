@@ -10,6 +10,7 @@ public class PowerupSpawner : MonoBehaviour
 	public GameObject[] Containers;
 	public float spawnTimeout;
 	private float _spawnTimeout = 0;
+	public int maxPowerups;
 
 	
 	// Use this for initialization
@@ -25,7 +26,7 @@ public class PowerupSpawner : MonoBehaviour
 		{
 			_spawnTimeout = spawnTimeout;
 			var powerupCount = GameObject.FindGameObjectsWithTag("Powerup").Length;
-			if (powerupCount < 3)
+			if (powerupCount < maxPowerups)
 			{
 				int random = Random.Range(0, Containers.Length);
 				var spawnee = Containers[random];
@@ -36,7 +37,7 @@ public class PowerupSpawner : MonoBehaviour
 	
 	private void SpawnNew(GameObject spawnee)
 	{	
-		var spawnPos = new Vector3(Random.Range(-5,5), Random.Range(-5,5), 0);
+		var spawnPos = new Vector3(Random.Range(-15,15), Random.Range(-8,8), 0);
 		Instantiate(spawnee, spawnPos, spawnee.GetComponent<Transform>().rotation);
 	}
 }

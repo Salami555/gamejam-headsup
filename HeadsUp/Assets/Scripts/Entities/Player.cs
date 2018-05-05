@@ -99,7 +99,11 @@ namespace Entities
         private void Update()
         {
             _rotateTimeout -= Time.deltaTime;
-            shieldTime = Math.Max(0, shieldTime - Time.deltaTime);
+            shieldTime -= Time.deltaTime;
+            if (shieldTime < 0)
+            {
+                transform.Find("cage").gameObject.SetActive(false);
+            }
             
             if (_rotateTimeout < 0)
             {
@@ -131,19 +135,19 @@ namespace Entities
             {
                 if (other.relativeVelocity.magnitude > hit_threshhold || other.gameObject.CompareTag("Player"))
                 {
-                    Camera.main.GetComponent<ScreenShake>().MakeUndirectedShake(0.5f, 0.4f);
+                    var otherPlayer = other.gameObject.GetComponent<Player>();
+                    Vector2 maxVelocity = otherPlayer._rigidbody.velocity.sqrMagnitude > _rigidbody.velocity.sqrMagnitude
+                        ? otherPlayer._rigidbody.velocity
+                        : _rigidbody.velocity;
+                    Camera.main.GetComponent<ScreenShake>().MakeDirectedShake(0.9f, 0.4f, maxVelocity.normalized);
                     ContactPoint2D[] contacts = new ContactPoint2D[1];
                     other.GetContacts(contacts);
                     Vector2 collision_pos =contacts[0].point;
                     Camera.main.GetComponent<ShockWaveRenderer>().MakeWave(collision_pos, 0.6f);
                     Instantiate(hit_explosion, collision_pos, transform.rotation);
-                    if (shieldTime>0)
-                    {
-                        health++;
-                    }
                     health--;
                     Debug.Log(health);
-                    if (health == 0 && other.gameObject.GetComponent<Player>() != null)
+                    if (health == 0 && otherPlayer != null)
                     {
                         transform.parent.GetComponent<WinManager>().CheckLives();
                     }
@@ -165,6 +169,7 @@ namespace Entities
         public void ActivateShield(float time)
         {
             shieldTime = time;
+            transform.Find("cage").gameObject.SetActive(true);
         }
         
         private void OnCollisionStay2D(Collision2D other)

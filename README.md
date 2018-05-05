@@ -3,6 +3,8 @@ HPI Game Jam Project "Heads Up"
 
 This will be an unity implemented arena pvp multiplayer jump'n'run game.
 
+[_Hosted Version_](https://headsup-hpi.herokuapp.com/)
+
 Collaborators
 -------------
 
